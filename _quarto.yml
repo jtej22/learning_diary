@@ -1,0 +1,25 @@
+project:
+  type: book
+
+book:
+  title: "Josiah's Remote Sensing Learning Diary"
+  author: "Josiah Tan"
+  date: "19/01/2023"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - week1.qmd
+    - week2.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+
