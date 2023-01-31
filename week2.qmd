@@ -1,6 +1,6 @@
 ---
-title: "week2"
+title: "Week 2: Quarto and Xaringan"
 editor: visual
 ---
-Week 2 presentation link: https://jtej22.github.io/w2_presentation/presentation.html#1 
----
+
+## [A Presentation on the GOES Satellite System:](https://jtej22.github.io/w2_presentation/presentation.html#1)

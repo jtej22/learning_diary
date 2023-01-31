@@ -1,6 +1,6 @@
 # Preface {.unnumbered}
 
-This is a Quarto book about Josiah's learning journey in the world of Remote Sensing.
+This is a Quarto book about Josiah's learning journey in the world of Remote Sensing. It will be updated weekly with a summary of what I've learnt through the CASA0023 Remote Sensing module with my thoughts on how it can be applied in different contexts.
 
 # Self-Introduction
 

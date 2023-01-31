@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>learning_diary - 2&nbsp; week1</title>
+<title>Josiah’s Remote Sensing Learning Diary - 1&nbsp; Week 1: Introduction to Remote Sensing</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./week2.html" rel="next">
-<link href="./intro.html" rel="prev">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -70,7 +70,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">week1</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title"><strong>Week 1: Introduction to Remote Sensing</strong></span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">learning_diary</a> 
+      <a href="./">Josiah’s Remote Sensing Learning Diary</a> 
     </div>
       </div>
       <div class="mt-2 flex-shrink-0 align-items-center">
@@ -100,17 +100,17 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  <a href="./week1.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Week 1: Introduction to Remote Sensing</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week1.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">week1</span></a>
+  <a href="./week2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Week 2: Quarto and Xaringan</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">week2</span></a>
+  <a href="./week3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Week 3: Corrections</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -128,14 +128,40 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="toc-section-number">1.1</span>  Learning Objectives</a></li>
+  <li><a href="#summary-of-key-concepts" id="toc-summary-of-key-concepts" class="nav-link" data-scroll-target="#summary-of-key-concepts"><span class="toc-section-number">1.2</span>  Summary of key concepts</a>
+  <ul class="collapse">
+  <li><a href="#types-of-sensors" id="toc-types-of-sensors" class="nav-link" data-scroll-target="#types-of-sensors"><span class="toc-section-number">1.2.1</span>  Types of sensors</a></li>
+  <li><a href="#data-resolutions" id="toc-data-resolutions" class="nav-link" data-scroll-target="#data-resolutions"><span class="toc-section-number">1.2.2</span>  Data resolutions</a></li>
+  </ul></li>
+  <li><a href="#practical" id="toc-practical" class="nav-link" data-scroll-target="#practical"><span class="toc-section-number">1.3</span>  Practical</a>
+  <ul class="collapse">
+  <li><a href="#colour-composites" id="toc-colour-composites" class="nav-link" data-scroll-target="#colour-composites"><span class="toc-section-number">1.3.1</span>  Colour composites</a></li>
+  <li><a href="#scatterplot-analysis" id="toc-scatterplot-analysis" class="nav-link" data-scroll-target="#scatterplot-analysis"><span class="toc-section-number">1.3.2</span>  Scatterplot analysis</a></li>
+  <li><a href="#resampling-and-masking" id="toc-resampling-and-masking" class="nav-link" data-scroll-target="#resampling-and-masking"><span class="toc-section-number">1.3.3</span>  Resampling and Masking</a></li>
+  <li><a href="#spectral-signatures" id="toc-spectral-signatures" class="nav-link" data-scroll-target="#spectral-signatures"><span class="toc-section-number">1.3.4</span>  Spectral Signatures</a></li>
+  </ul></li>
+  <li><a href="#applications-of-spectral-signatures" id="toc-applications-of-spectral-signatures" class="nav-link" data-scroll-target="#applications-of-spectral-signatures"><span class="toc-section-number">1.4</span>  Applications of Spectral Signatures</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">1.5</span>  Reflection</a>
+  <ul class="collapse">
+  <li><a href="#reflection-on-data-resolutions" id="toc-reflection-on-data-resolutions" class="nav-link" data-scroll-target="#reflection-on-data-resolutions"><span class="toc-section-number">1.5.1</span>  Reflection on data resolutions</a></li>
+  <li><a href="#pois" id="toc-pois" class="nav-link" data-scroll-target="#pois"><span class="toc-section-number">1.5.2</span>  POIs</a></li>
+  <li><a href="#spectral-signatures-1" id="toc-spectral-signatures-1" class="nav-link" data-scroll-target="#spectral-signatures-1"><span class="toc-section-number">1.5.3</span>  Spectral Signatures</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="toc-section-number">1.6</span>  References</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">week1</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title"><strong>Week 1: Introduction to Remote Sensing</strong></span></h1>
 </div>
 
 
@@ -149,8 +175,188 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<hr>
+<section id="learning-objectives" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">1.1</span> Learning Objectives</h2>
+<p>The learning objectives of both the lecture and practical are:</p>
+<ul>
+<li><p>Understand the science behind remote sensors and how satellite imagery is obtained</p></li>
+<li><p>Understand how remotely sensed data work</p></li>
+<li><p>Source, load and articulate the differences between Landsat and Sentinel data</p></li>
+<li><p>Undertake basic raster image statistics and processing</p></li>
+<li><p>Evaluate the (dis)advantages of each type of software you have used</p></li>
+<li><p>Pull out and statistically compare spectral signatures</p></li>
+</ul>
+</section>
+<section id="summary-of-key-concepts" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="summary-of-key-concepts"><span class="header-section-number">1.2</span> Summary of key concepts</h2>
+<section id="types-of-sensors" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="types-of-sensors"><span class="header-section-number">1.2.1</span> Types of sensors</h3>
+<p>There are 2 main types of sensors, passive and active sensors. The key difference is that passive sensors (e.g.&nbsp;cameras, satellite sensors) usually detect reflected energy from the Sun while active sensors (e.g.&nbsp;LiDAR, radar, X-Ray) actively emit electromagnetic (EM) waves and detected the reflected waves.</p>
+<p>This difference will be useful as the usefulness of the data from different types of sensors will be affected. Passive sensors which rely on reflected energy are thus dependent on the Sun, meaning that the time and day the image is captured will affect the imagery’s usefulness, as well as if there’s presence of cloud cover as clouds will be captured too. This may render the images less useful and users have to use images from another recorded day. Active sensors are more able to bypass clouds and this means that their recorded data is usually not affected by cloud cover and more useful. This also ties into the scientific concept of EM waves, as active sensors record data from a wider range of the EM spectrum compared to passive sensors, hence it can “see” through clouds and other atmospheric conditions.</p>
+</section>
+<section id="data-resolutions" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="data-resolutions"><span class="header-section-number">1.2.2</span> Data resolutions</h3>
+<p>The 4 types of resolutions are:</p>
+<ul>
+<li><p>Spatial: Size of the raster grid per pixel</p></li>
+<li><p>Spectral: Number of bands it records data in</p></li>
+<li><p>Temporal: Frequency of revisiting the site</p></li>
+<li><p>Radiometric: Differences in light or reflectance</p></li>
+</ul>
+</section>
+</section>
+<section id="practical" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="practical"><span class="header-section-number">1.3</span> Practical</h2>
+<p>The practical gave me the opportunity to explore the differences between Sentinel and Landsat data, as well as go through the practical process of searching for and downloading the relevant datasets. While I am slightly clearer on the general process, I am still perplexed by the vast options available such as choosing platforms, product types, and what is the best practice for choosing relevant imagery for different purposes.</p>
+<p>When exploring the Sentinel data it was helpful to see the various bands and that solidified my understanding of spectral bands practically.</p>
+<p><strong>![Fig. 1: Bands available in Sentinel data](/img/sentinel_bands.png)</strong></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/sentinel_bands.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Fig. 1: Bands available in Sentinel data</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="colour-composites" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="colour-composites"><span class="header-section-number">1.3.1</span> Colour composites</h3>
+<p>Colour composites are a way of manipulating the way rasters are visualised (not actually modifying the raster data) so that we can focus on different aspects. The RGB image allows us to see the raster data in a way that is intuitive. There are other composites (band combinations) that are useful such as:</p>
+<ul>
+<li><p>False colour (Color infrared) composite: Emphasizes vegetation health, with denser vegetation appearing red while urban areas appear white</p>
+<ul>
+<li>This is because vegetation absorbs red</li>
+</ul></li>
+<li><p>Atmospheric penetration composite: does not use visible bands so as to not be affected by atmospheric particles</p>
+<ul>
+<li>Vegetation appears blue, urban area appears white, gray cyan or purple.</li>
+</ul></li>
+<li><p>Shortwave infrared composite: Used to illustrate vegetation in different shades of green (differing densities) and brown areas represent built up or bare soil.</p></li>
+<li><p>More information can be found on <a href="https://gisgeography.com/sentinel-2-bands-combinations/">gisgeography</a></p></li>
+</ul>
+</section>
+<section id="scatterplot-analysis" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="scatterplot-analysis"><span class="header-section-number">1.3.2</span> Scatterplot analysis</h3>
+<p>We were exposed to a really cool method of using scatterplots to statistically analyse images, and created a plot of Band 8 (y-axis) against Band 4 (x-axis).</p>
+<p>For this practical, my city of choice was Cape Town, South Africa, which was the city Andy used in the practical instructions. I chose this city as I wanted to focus on familiarising with the layout and tools in SNAP and R and not worry about differences in inputs from Andy’s example.</p>
+<p>The scatterplot I obtained is as follows:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/tasseled-cap.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Fig. 2: Tasseled Cap using Cape Town imagery</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This scatterplot can be interpreted as follows:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/red_NIR_lab11.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Fig. 3: Interpretation of Tasseled Caps</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Source: <a href="http://geofaculty.uwyo.edu/rhowell/classes/remote_sensing/labs/lab_11_2018_alternate_vegetation.pdf">Remote Sensing 4113</a></p>
+</section>
+<section id="resampling-and-masking" class="level3" data-number="1.3.3">
+<h3 data-number="1.3.3" class="anchored" data-anchor-id="resampling-and-masking"><span class="header-section-number">1.3.3</span> Resampling and Masking</h3>
+<p>Resampling and Masking are essential processes when dealing with raster data.</p>
+<p>Masking is essentially clipping like what we saw in CASA0005, and this can be done with vector data (ESRI Shapefile .shp) in SNAP.</p>
+<p>Resampling is the change of spatial resolution (either increasing or decreasing) of the raster dataset. Resampling calculates new pixel values from the original pixel values in the original image.</p>
+<p>There are <a href="https://gisgeography.com/raster-resampling/">various resampling techniques</a>:</p>
+<ol type="1">
+<li>Nearest Neighbour Resampling
+<ol type="1">
+<li><p>Takes the cell centre from the input raster to determine the closes cell centre of the output</p></li>
+<li><p>Fastest method because of its simplicity</p></li>
+<li><p>Ideal for categorical, nominal and ordinal data as it does not alter values</p></li>
+<li><p>E.g. useful for landcover classification raster grid</p></li>
+</ol></li>
+<li>Bilinear Interpolation
+<ol type="1">
+<li><p>Calculates values of a grid based on 4 nearby grids</p></li>
+<li><p>Assigns the output cell value by taking a weighted average</p></li>
+<li><p>Useful when working with continuous datasets that do not have distinct boundaries</p></li>
+<li><p>E.g. useful for noise distance rasters</p></li>
+</ol></li>
+<li>Cubic Convolution Interpolation
+<ol type="1">
+<li><p>Similar to bilinear interpolation</p></li>
+<li><p>Uses 16 nearest cells instead</p></li>
+<li><p>Long processing time</p></li>
+<li><p>Usually used for continuous surfaces where much noise exists</p></li>
+</ol></li>
+<li>Majority Resampling
+<ol type="1">
+<li><p>Similar to nearest neighbour algorithm</p></li>
+<li><p>Instead uses the most common values in a filter window</p></li>
+</ol></li>
+</ol>
+</section>
+<section id="spectral-signatures" class="level3" data-number="1.3.4">
+<h3 data-number="1.3.4" class="anchored" data-anchor-id="spectral-signatures"><span class="header-section-number">1.3.4</span> Spectral Signatures</h3>
+<p>Comparing Landsat and Sentinel products, we only focus on overlapping bands which are B2-4.</p>
+<p>In R, we use the shapefiles for each landcover type to extract pixel values from the raster data. This is done using the R package terra. As with CASA0005, it is important to check the CRS of our data. We use terra’s extract function to extract values from our raster, and we repeat this for each landcover type for each image type (Landsat and Sentinel).</p>
+<p>Using these values, we plot spectral profiles and density plots to observe differences between landcover types.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/spectral_reflectance_sen.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Fig. 4a: Sentinel Spectral Reflectance</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/spectral_reflectance_lsat.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Fig. 4b: Landsat Spectral Reflectance</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Comparing the two outputs, we firstly see that the Landsat plot only has 3 land-cover types as there was no high-urban POI in the Landsat file (due to differences in areas covered). The number of bands plotted is the number of bands that are available in the product. Ideally, we want each landcover type to have a distinct signature at each band so that we can use the raster products for landuse classification.</p>
+<p>For both plots, there isn’t much of a distinct spectral signature any of the landcover types, and there is a fair amount of overlap between the landcover types in each band. This means that the raster products used are not the most ideal for landcover classification and more image processing might be needed. It should also be noted that while the Landsat plot looks less differentiated, the mean values on the y-axis are of different scales from the y-axis values for the Sentinel plot.</p>
+</section>
+</section>
+<section id="applications-of-spectral-signatures" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="applications-of-spectral-signatures"><span class="header-section-number">1.4</span> Applications of Spectral Signatures</h2>
+<p>An interesting application of spectral signatures in academic studies is by <a href="https://www.mdpi.com/2072-4292/13/6/1183">Corcione et al (2021)</a> which analyses the effects of low-backscattering areas of anthropogenic and natural origin on the azimuth autocorrelation function (AACF) using VV-polarised SAR measurements. This is of great interest for the marine pollution community to better differentiate between natural low-backscattering or human pollution.</p>
+</section>
+<section id="reflection" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="reflection"><span class="header-section-number">1.5</span> Reflection</h2>
+<section id="reflection-on-data-resolutions" class="level3" data-number="1.5.1">
+<h3 data-number="1.5.1" class="anchored" data-anchor-id="reflection-on-data-resolutions"><span class="header-section-number">1.5.1</span> Reflection on data resolutions</h3>
+<p>Spatial and temporal resolution are concepts that are fairly straightforward to me, as I used to be a mapper with the Singapore Armed Forces, where both types of resolutions were practical considerations when we were digitising areas of interest as it affected how clearly we could observe features and when choosing image files to use.</p>
+<p>Spectral resolution was of particular interest to me, as it is the key area that is involved in remote sensing analysis. Objects appear as a certain colour on satellite imagery because that is the wavelength that is reflected, and in the raster data from remote sensors, we can observe values for each wavelength across the EM spectrum. This allows us to create a spectral signature which helps us identify different features or land-covers. This concept is explored more practically later.</p>
+<p>Radiometric resolution is the ability of a sensor to detect and record differences in energy, and the higher radiometric resolution a sensor has, the more sensitive it is to differences on the ground. This means the image is of better quality.</p>
+</section>
+<section id="pois" class="level3" data-number="1.5.2">
+<h3 data-number="1.5.2" class="anchored" data-anchor-id="pois"><span class="header-section-number">1.5.2</span> POIs</h3>
+<p>Just a note on POIs, while the practical suggested various land-cover types such as bare earth, water grass, forest and urban, I interpreted these land-cover types according to my prior experience of landcover classification in Singapore. This meant I did not find any suitable POIs for the forest category as it was mostly bare earth, grass and farmland in the tile. Upon clarification with Andy, the main takeaway is that POIs depend on the area chosen and research objectives, and what types of landcover are present. It is up to the researcher to define the classifications.</p>
+<p>We can also rely on landcovers classified by other researchers such as <a href="https://dynamicworld.app/">Dynamic World</a> and reference their 9 land use and cover types (e.g.&nbsp;trees, grass, shrub &amp; scrub and snow &amp; ice)</p>
+</section>
+<section id="spectral-signatures-1" class="level3" data-number="1.5.3">
+<h3 data-number="1.5.3" class="anchored" data-anchor-id="spectral-signatures-1"><span class="header-section-number">1.5.3</span> Spectral Signatures</h3>
+<p>Spectral signatures will be key in my remote sensing journey moving forward. Regarding resources for spectral signatures that might be useful in the future, there is the <a href="https://www.usgs.gov/labs/spectroscopy-lab/science/spectral-library">USGS Spectral Library</a> where we can reference the spectral reflectance of various materials for identification purposes. There is also the <a href="https://github.com/awesome-spectral-indices/awesome-spectral-indices">Awesome Spectral Indices list</a> which keeps track of classical and novel spectral indices for different Remote Sensing applications.</p>
+</section>
+</section>
+<section id="references" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="references"><span class="header-section-number">1.6</span> References</h2>
+<p>Corcione, V. A. Buono, F. Nunziata and M. Migliaccio (2021) ‘A Sensitivty Analysis on the Spectral Signatures of Low-Backscattering Sea Areas in Sentinel-1 SAR Images’, Remote Sensing, 13(6), 1183; https://doi.org/10.3390/rs13061183.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -253,13 +459,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./week2.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">week2</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Week 2: Quarto and Xaringan</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
