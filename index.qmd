@@ -2,8 +2,6 @@
 
 This is a Quarto book about Josiah's learning journey in the world of Remote Sensing.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+# Self-Introduction
 
-```{r}
-1 + 1
-```
+Welcome to my learning diary on remote sensing! I am currently a MSc Urban Spatial Science student at UCL Centre for Advanced Spatial Analytics (CASA). Prior to this, I graduated from UCL with a BSc in Geography with Economics. I am mainly interested in using spatial analysis techniques to urban problems from a policymaking perspective, which explains why I am at CASA now. After graduation, I will be working with Housing Development Board (HDB) in Singapore, the key agency responsible for public housing in the country. I have also interned with Singapore's Ministry of Sustainability and Environment before, and am interested in urban environmental issues. I hope to learn necessary and relevant skills and techniques that can be applied to both urban housing and environmental contexts.
