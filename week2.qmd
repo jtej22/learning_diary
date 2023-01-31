@@ -2,3 +2,5 @@
 title: "week2"
 editor: visual
 ---
+Week 2 presentation link: https://jtej22.github.io/w2_presentation/presentation.html#1 
+---
