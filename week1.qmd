@@ -49,8 +49,6 @@ The practical gave me the opportunity to explore the differences between Sentine
 
 When exploring the Sentinel data it was helpful to see the various bands and that solidified my understanding of spectral bands practically.
 
-**!\[Fig. 1: Bands available in Sentinel data\](/img/sentinel_bands.png)**
-
 ```{r echo=FALSE, out.width = "100%", fig.align='center', cache=FALSE, fig.cap= "Fig. 1: Bands available in Sentinel data"}
 knitr::include_graphics('img/sentinel_bands.png') 
 ```
