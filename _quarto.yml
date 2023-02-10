@@ -13,6 +13,7 @@ book:
     - references.qmd
 
 bibliography: references.bib
+csl: harvard-cite-them-right.csl
 
 format:
   html:

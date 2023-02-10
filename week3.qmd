@@ -22,7 +22,7 @@ In this lecture, we mainly looked at types of corrections that could be applied 
 1.  Geometric
     -   Use Ground Control Points (GCPs) to match points in the new image to a reference dataset.
 
-    -   Ideally done with backward mapping (output to input) so that we can get a value in the original input image for every value in the gold standard (Jensen 2015:247).
+    -   Ideally done with backward mapping (output to input) so that we can get a value in the original input image for every value in the gold standard [@jensen2015, pp. 247].
 
     -   And resample the final raster
 2.  Atmospheric
@@ -34,7 +34,7 @@ In this lecture, we mainly looked at types of corrections that could be applied 
 
     -   Requires sensor geometry and DEM.
 
-    -   Cosine correction can be used (Jensen 2015)
+    -   Cosine correction can be used [@jensen2015]
 4.  Radiometric
     -   Using Digital Number to obtain spectral radiance
 
@@ -56,9 +56,9 @@ Types of Enhancements and methods:
 
 -   Principal Component Analysis (PCA)
 
-### Geometric Corrections and Mosaicking (Jensen 2015)
+### Geometric Corrections and Mosaicking [@jensen2015]
 
-For this week's learning diary, I will be focusing on types of geometric corrections and the mosaicking process, based on Jensen's textbook (2015).
+For this week's learning diary, I will be focusing on types of geometric corrections and the mosaicking process, based on Jensen's textbook [-@jensen2015].
 
 **Ground Control Points** are locations on the road surface that can be easily and accurately identified on a map. Each GCP should have 2 distinct sets of coordinates, image and map coordinates.
 
@@ -73,7 +73,7 @@ Steps:
 
     -   A first-order, six-parameter, linear transformation is sufficient to rectify the imagery to a geographic frame of reference.
 
-    -   This type of transformation can model 6 kinds of distortions (Novak 1992; Buiten and Van Putten 1997):
+    -   This type of transformation can model 6 kinds of distortions [@novak1992; @buiten1997]
 
         -   Translation in x and y
 
@@ -95,7 +95,7 @@ Steps:
 
         -   This forward mapping logic is useful when we rectify the location of discrete coordinates along a linear feature. However, when we are filling a rectified output grid with values from an unrectified input image, forward mapping logic is not very useful as the output location may not fall exactly on a x,y output map coordinate.
 
-        -   This can result in output matrix pixels with no output values (Wolberg 1990)
+        -   This can result in output matrix pixels with no output values [@wolberg1990]
 
     -   Inverse Mapping (output-to-input)
 
@@ -195,44 +195,18 @@ knitr::include_graphics('img/NDMI2.png')
 
 **Data fusion** is the process of appending new raster data to existing datasets or creating new raster datasets with different bands, and data fusion can be done with newly-created texture measures and the original data. Fusion can be done in R using the `stack()` function.
 
-When merging datasets obtained from different remote sensors, all datasets should be accurately registered to one another and resampled to the same pixel size. One component-substitution method available is Principle Component Analysis (PCA). At this stage I would have done Principal Component Analysis to scale the raster datasets, but unfortunately I was unable to complete the PCA part of the practical. PCA allows comparison of data that is not easily comparable in its raw form. Performing PCA would transform the original data to produce uncorrelated principal component images (Pratt 2013). An advantage of PCA-based pan-sharpening is that the number of bands is not restricted (Klonus and Ehlers 2009)
+When merging datasets obtained from different remote sensors, all datasets should be accurately registered to one another and resampled to the same pixel size. One component-substitution method available is Principle Component Analysis (PCA). At this stage I would have done Principal Component Analysis to scale the raster datasets, but unfortunately I was unable to complete the PCA part of the practical. PCA allows comparison of data that is not easily comparable in its raw form. Performing PCA would transform the original data to produce uncorrelated principal component images [@pratt2013]. An advantage of PCA-based pan-sharpening is that the number of bands is not restricted [@klonus2009]
 
 ## Applications of Ratio Enhancements
 
-The normalised difference vegetation index (NDVI) is widely used for vegetation studies, with the NASA Global Inventory, Monitoring and Modelling Studies (GIMMS) global coverage dataset (Tucker et al 2005) being the most widely used AVHRR (Advanced Very High Resolution Radiometer) dataset. They form a relatively robust basis for detecting long-term trends in NDVI in most of the world's semi-arid, dry sub-humid and sub-humid areas (Fensholt and Proud 2012).
+The normalised difference vegetation index (NDVI) is widely used for vegetation studies, with the NASA Global Inventory, Monitoring and Modelling Studies (GIMMS) global coverage dataset [@tucker2005] being the most widely used AVHRR (Advanced Very High Resolution Radiometer) dataset. They form a relatively robust basis for detecting long-term trends in NDVI in most of the world's semi-arid, dry sub-humid and sub-humid areas [@fensholt2012].
 
-NDVI values can be used to determine and analyse drought-prone areas, such as Faridatul and Ahmed's (2020) work incorporating NDVI values into a modified vegetation condition index (mVCI) which enhances the detection of agricultural drought in the study area of Bangladesh; or can be used to analyse crop yields based on Pinto et al.'s (2017) work on canola yields in Brazil.
+NDVI values can be used to determine and analyse drought-prone areas, such as Faridatul and Ahmed's [-@faridatul2020] work incorporating NDVI values into a modified vegetation condition index (mVCI) which enhances the detection of agricultural drought in the study area of Bangladesh; or can be used to analyse crop yields based on Pinto et al.'s [-@pinto2017] work on canola yields in Brazil.
 
-Focusing on Serengeti National Park, I thought it would be useful to use NDVI on satellite imagery of SNP for potential applications of monitoring anthropogenic impacts on the Protected Area or impacts of climate change on the ecosystem. For example, Boone et al (2006) use rainfall and vegetation data (and NDVI) to model Serengeti wildebeest migratory patterns. However, Anderson et al (2010) also make the point that we should be cautious when using NDVI to study wildlife hotspots as NDVI can represent the effects of multiple, correlated processes (e.g. biomass, forage quality, cover for predators etc.) that influence the presence of hotspots (e.g. herbivore hotspots).
+Focusing on Serengeti National Park, I thought it would be useful to use NDVI on satellite imagery of SNP for potential applications of monitoring anthropogenic impacts on the Protected Area or impacts of climate change on the ecosystem. For example, Boone et al [-@boone2006] use rainfall and vegetation data (and NDVI) to model Serengeti wildebeest migratory patterns. However, Anderson et al [-@anderson] also make the point that we should be cautious when using NDVI to study wildlife hotspots as NDVI can represent the effects of multiple, correlated processes (e.g. biomass, forage quality, cover for predators etc.) that influence the presence of hotspots (e.g. herbivore hotspots).
 
 ## Reflections
 
 As Andy mentioned in the lectures, it is unlikely that we would have to perform geometric corrections given that most datasets are "Analysis Ready Data" (ARD), but it is useful to know in the event that we encounter data that requires geometric correction, or even just understanding how the data products we use have been treated from their raw form.
 
 Mosaicking is a useful process given the limitations of some remote sensing products regarding geographical extents, and might come in handy in future research. Nonetheless, Andy also mentioned how this process may not be as important today as it is incorporated in the Google Earth Engine (GEE) workflow, so I am excited to learn in future weeks how this process is done in GEE. Mosaicking is also a bit of a throwback personally, back to 2017-18 for me when I learnt how to orthorectify and mosaic in ERDAS Imagine software (which I realised I have forgotten most of by now) and I am excited to learn how the process has evolved today when we start using GEE.
-
-## References
-
-[Anderson, T. M., J. G. C. Hopcraft, S. Eby, M. Ritchie, J. B. Grace, H. Olff (2010) 'Landscape-scale analyses suggest both nutrient and antipredator advantages to Serengeti herbivore hotspots', *Ecology*, 91(5), 1519-29.](https://www.jstor.org/stable/25661201)
-
-[Boone, R. B., S. J. Thirgood, J. G. C. Hopcraft (2006) 'Serengeti Wildebeest Migratory Patterns Modeled from Rainfall and New Vegetation Growth', *Ecology*, 87(8), 1987-94.](https://www.jstor.org/stable/20069184)
-
-Buiten, H. J. and B. Van Putten (1997) 'Quality Assessment of Remote Sensing Registration- Analysis and Testing of Control Point Residuals', *ISPRS Journal of Photogrammetry & Remote Sensing*, 52, 57-73. Available at: [https://doi.org/10.1016/S0924-2716(97)83001-8](https://doi-org.libproxy.ucl.ac.uk/10.1016/S0924-2716(97)83001-8 "Persistent link using digital object identifier")
-
-[Faridatul, M. I. and B. Ahmed (2020) 'Assessing Agricultural Vulnerability to Drought in a Heterogeneous Environment: A Remote Sensing-Based Approach', *Remote Sensing*, 12(20), 3363.](https://discovery.ucl.ac.uk/id/eprint/10113151/1/remotesensing-12-03363.pdf)
-
-[Fensholt, R. and S. R. Proud (2012) 'Evaluation of Earth Observation based global long term vegetation trends --- Comparing GIMMS and MODIS global NDVI time series', *Remote Sensing of Environment*, 119, 131-47.](https://doi.org/10.1016/j.rse.2011.12.015)
-
-Jensen, J.R. (2015) *Introductory Digital Image Processing,* 4th edn, Pearson Higher Education US (A Remote Sensing Perspective).
-
-[Klonus, S. and M. Ehlers (2009) 'Performance of Evaluation Methods in Image Fusion', *Proceedings of the 12th International Conference on Information Fusion*, Seattle, July 6-9 2009, p. 8.](https://ieeexplore-ieee-org.libproxy.ucl.ac.uk/document/5203659)
-
-Novak, K. (1992) 'Rectification of Digital Imagery', *Photogrammeric Engineering & Remote Sensing*, 58(3), 339-44.
-
-[Pinto, D. G., D. C. Fontana, G. A. Damalgo, E. Fochesatto, M. B. Vicari, C. Bremm, G. R. da Cunha, J. A. de Gouvea, A. Santi (2017) 'Correlations between spectral and biophysical data obtained in canola canopy cultivated in the subtropical region of Brazil', *Pesquisa Agropecuária Brasileira*, 52 (10), 825-32.](https://discovery.ucl.ac.uk/id/eprint/10092180/1/1678-3921-pab-52-10-00825.pdf)
-
-[Pratt, W. K. (2013) *Introduction to Digital Image Processing*, Boca Raton: CRC Press, p. 736.](https://learning.oreilly.com/library/view/introduction-to-digital/9781482216691/?sso_link=yes&sso_link_from=university-college-london)
-
-Tucker, C. J., J. E. Pinzon, M. E. Brown, D. A. Slayback, E. W. Pak, R. Mahoney (2005) 'An extended AVHRR 8-km NDVI dataset compatible with MODIS and SPOT vegetation NDVI data', *International Journal of Remote Sensing*, 26, 4485-98.
-
-Wolberg, G. (1990) *Digital Image Warping*, NY: John Wiley- IEEE Computer Society, p. 340.

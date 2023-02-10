@@ -1,0 +1,74 @@
+# Week 5: Google Earth Engine (GEE)
+
+---
+title: "week4"
+editor: visual
+---
+
+## The set up of GEE
+
+GEE is a geospatial processing service that allows geospatial analysis at scale (volume-wise). It takes code that users write and applies it to data on their servers. GEE has unique names for the types of data we use, "image" for what we know as raster data and "feature" for what we know as vectors. There is also ImageCollection and FeatureCollections, which are equivalents of raster stacks and (possibly?) geodatabases. GEE also uses Javascript
+
+### Client vs server side
+
+We can upload our own data on GEE, and that is on client side. But the other GEE data is on server side. We refer to these Earth Engine Objects using "ee" in front of it, and they are not available locally.
+
+This implies that we shouldn't loop on the server. Instead we create a function, and then apply it to what we want on the server. However, there are functions available on the server side too, and they are referred to with the ee in front too.
+
+Mapping is useful to be more computationally efficient when using GEE
+
+### Scale/ resolution
+
+Image scale in GEE refers to pixel resolution. When analysing in GEE, GEE aggregates the image to fit a 256x256 grid. We have to set the scale parameter we need otherwise GEE will resample using nearest neighbour. GEE is aggregating the values based on our analysis extent.
+
+Input the min and max for bands to control how the image is visualised as well.
+
+### Projections
+
+GEE uses EPSG 3857 as the default projection, and we do not need to worry about it until the end when we are exporting.
+
+## GEE in Action!
+
+Objects: vectors, rasters, features, strings, numbers. Each class has specific methods for it.
+
+We can build our query for the image collection! (practical)
+
+### Geometry Operations
+
+Joins
+
+-   Join inside a filter!
+
+-   Intersect
+
+-   Subset
+
+Zonal Statistics
+
+Filtering
+
+### Methods
+
+Machine Learning
+
+Supervised and Unsupervised classification
+
+Deep Learning with TensorFlow
+
+Exploring relationships between variables
+
+### Applications/ Output
+
+Online charts
+
+[Scalable applications with GEE data](https://github.com/philippgaertner/awesome-earth-engine-apps)
+
+### Reducing Images (how does this fit?)
+
+Reduce by region and regions, neighbourhoods
+
+## Linear Regression
+
+Observe change over time in pixel values using linear regression --\> reducer as we are reducing data to 2 iamges
+
+Lots of variations in

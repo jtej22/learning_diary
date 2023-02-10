@@ -1,74 +1,56 @@
-# Week 5: Google Earth Engine (GEE)
+# Week 4: Policy
 
 ---
-title: "week4"
+title: "Week 4: Policy"
 editor: visual
 ---
 
-## The set up of GEE
+## City and Policy Summary
 
-GEE is a geospatial processing service that allows geospatial analysis at scale (volume-wise). It takes code that users write and applies it to data on their servers. GEE has unique names for the types of data we use, "image" for what we know as raster data and "feature" for what we know as vectors. There is also ImageCollection and FeatureCollections, which are equivalents of raster stacks and (possibly?) geodatabases. GEE also uses Javascript
+Singapore is a tropical city-state located in Southeast Asia, and is well-known for being a "Green City" for its extensive incorporation of greenery into its urban form. In light of climate change and the need to transit to more sustainable forms of development, the Singapore government launched the [*Singapore Green Plan 2030*](https://www.greenplan.gov.sg/)in 2021 to drive the national agenda on sustainable development. As a low-lying island state, climate change is an existential threat for Singapore and there is a need to ensure its resilience to climate threats. There are 5 key pillars to the Singapore Green Plan (SGP):
 
-### Client vs server side
+-   City in Nature
 
-We can upload our own data on GEE, and that is on client side. But the other GEE data is on server side. We refer to these Earth Engine Objects using "ee" in front of it, and they are not available locally.
+    -   Key Goal: Set aside 50% more land (200 ha) for nature parks, intensify nature in gardens and parks, and for every household to live within 10 minutes walk of a park
 
-This implies that we shouldn't loop on the server. Instead we create a function, and then apply it to what we want on the server. However, there are functions available on the server side too, and they are referred to with the ee in front too.
+-   Energy Reset
 
-Mapping is useful to be more computationally efficient when using GEE
+    -   Key Goals: Quadruple solar energy deployment by 2025, including covering rooftops of state-subsidised housing blocks with solar panels, and reduce domestic greenhouse gas emissions by at least 3 million tonnes per year by 2030.
 
-### Scale/ resolution
+-   Sustainable Living
 
-Image scale in GEE refers to pixel resolution. When analysing in GEE, GEE aggregates the image to fit a 256x256 grid. We have to set the scale parameter we need otherwise GEE will resample using nearest neighbour. GEE is aggregating the values based on our analysis extent.
+    -   Key Goals: Reduce waste sent to landfills by 30% and encourage walking and cycling as transport options.
 
-Input the min and max for bands to control how the image is visualised as well.
+-   Green Economy
 
-### Projections 
+    -   Key Goals: Promote Green Finance and carbon trading
 
-GEE uses EPSG 3857 as the default projection, and we do not need to worry about it until the end when we are exporting.
+-   Resilient Future
 
-## GEE in Action! 
+    -   Key Goals: Better understand and protect coastlines against rising sea levels, and limit the urban heat island effect.
 
-Objects: vectors, rasters, features, strings, numbers. Each class has specific methods for it.
+For the policy goals of protecting coastlines and limiting urban heat effects, it is admirable that Singapore is looking to incorporate remotely sensed data into its workflow for achieving these goals. To better understand and model rising sea levels and their effects on Singapore, the [Public Utilities Board (PUB)](https://www.pub.gov.sg/news/pressreleases/2021pr001) has collaborated with [National University of Singapore (NUS)](https://cde.nus.edu.sg/cee/research/research-clusters/ccm/integrated-coastal-inland-flood-model-for-climate-change/) to use remotely-sensed data and geospatial models. As for [efforts mitigating](https://www.mse.gov.sg/cos/resources/cos-annex-j.pdf) Urban Heat Island effect, the National Parks agency (NParks) has deployed an island-wide network of climate sensors that collect data on wind speeds, humidity and temperature. The collected data will then be used in the Singapore Variable Resolution (SINGV) model (which models future climatic scenarios) and the Integrated Environment Modeller (IEM) (which helps urban planners optimise building layouts).
 
-We can build our query for the image collection! (practical)
+Remote sensing data can be further incorporated into the the Singapore Green Plan workflow, and I would propose using it to help in the achievement of the *City in Nature* goal.
 
-### Geometry Operations
+## Application of remotely sensed data to the *City in Nature* goal
 
-Joins
+I would propose the use of remote sensing methods to measure and track the intensity of nature in gardens and parks.
 
--   Join inside a filter!
+Before I go into the details of how this can be done specifically in Singapore's context, I will first do a literature review on current methodologies on urban vegetation.
 
--   Intersect
+For this, I refer to Neyns and Canters' [-@neyns2022] overview on current literature on urban vegetation in remote sensing. Scholars either define vegetation types based on functionality or taxonomic classes. Studies that analyse vegetation type by functionality tend to focus on the provision of ecosystem services., while classification by species in the urban environment tends to be more challenging due to noise.
 
--   Subset
+As for the type of sensor data, it is noted that high spatial resolution (which is desirable to ensure that the vegetation is larger than a pixel) usually comes with a tradeoff on spectral resolution (which is better for mapping results). As for spectral bands, Li et al [-@li2015]\] found that the newly added red edge and NIR2 bands of Worldview 2 and 3 contribute more to the differentiation of tree species compared to the traditional four bands of Worldview 1 (red, green, blue, NIR). The mapping of individual trees becomes easier from a resolution of 3m or higher, and both spaceborne and airborne sensors can produce imagery at this resolution. Degerickx et al [-@degerickx2020] also found that structural variables derived from LiDAR data was more useful than hyperspectral variables. Using multi-temporal data is also useful to assess the influence of the time of data acquisition as well as in the classification process. However, given the relative stability of Singapore's weather throughout the year, this may not be as essential.
 
-Zonal Statistics
+As for feature definition, there are several types discussed such as spectral, textural, geometric, contextual and LIDAR-derived features. Spectral features use vegetation indices such as NDVI (which was covered in week 3), although NDVI in urban environments may lead to the possible false labelling of red clay roofs as vegetation [@zhang2010]. Geometric features describing the size, shape and edge complexity of objects can be useful in identifying broader functional vegetation types due to their widely different spatial properties (i.e. the space they occupy). Contextual features use neighbouring characteristics, and can be used for the mapping of functional vegetation types, such as Wen et al. [-@wen2017] differentiating between road-side, park and residential trees by considering the relation between trees in a predefined area.
 
-Filtering
+Wang et al [-@wang2019] concluded that fusion of spectral imagery with Light Detection And Ranging (LiDAR) data substantially improves the identification of tree species in a urban setting. Authors also deal with shadows in various ways such as omitting elements affected by shadow, or by performing shadow correction, or by including shadowed areas as separate classes.
 
-### Methods
+Referring to Ren et al's [-@ren2017] work, we see that using NDVI with Landsat TM data is also useful in rapdily estimating urban vegetation structural attributes such as leaf area index (LAI), crown closure (CC) and basal area (BA) at a spatiotemporal 30m resolution. NDVI applied to Sentinel-2 images, combined with plant height information (using Digital Object Height Models) is also another method of analysing he spatial distribution of well-equipped greenspace areas with high health and recreational potential as well as areas for improvement in poorly-equipped urban areas [@juergens2022].
 
-Machine Learning
+Circling back to how Singapore can use remote sensing methods to plan and monitor greenspaces and vegetation intensity, I would propose using Landsat or Sentinel imagery with NDVI, combined with 3D datasets to analyse greenspaces and plan where improvements in greenspaces should occur based on Juergens and Meyer-Heß's [-@juergens2022]methodology. Following which, I propose that remote sensing methods also be incorporated into a monitoring process, to measure the change in vegetation intensity and if planned improvements to urban vegetation are successful. Given that this measurement is not needed frequently (probably once a year), I would recommend that airborne sensors be used, so that data of high spatial and spectral resolution can be gathered, making the measurement of urban vegetation intensity more accurate. LiDAR data should also be included so that it can be combined with spectral imagery. This will allow Singapore to more easily quantify and measure the effectiveness of their efforts to intensify urban vegetation in its goal to become a *City in Nature*.
 
-Supervised and Unsupervised classification
+## Reflection
 
-Deep Learning with TensorFlow
-
-Exploring relationships between variables
-
-### Applications/ Output
-
-Online charts
-
-[Scalable applications with GEE data](https://github.com/philippgaertner/awesome-earth-engine-apps)
-
-### Reducing Images (how does this fit?)
-
-Reduce by region and regions, neighbourhoods
-
-## Linear Regression 
-
-Observe change over time in pixel values using linear regression --\> reducer as we are reducing data to 2 iamges
-
-Lots of variations in
+Thinking about policy applications was helpful as it pushed me to consider the specific data sources and methodologies that could be used to achieve particular goals, and this was helpful as we could think through specific details rather than just "know" that remotely sensed data could be applied in different many ways. Obviously, there are more ways we can think about the practical applications of remotely sensed data in policy, but I enjoyed this start. While I now roughly understand the steps that can be taken to apply remote sensing methodologies in a policy context, I think the next step is to understand how I can actually do it practically, which I look forward to learning more about in the rest of the module.

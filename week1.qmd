@@ -150,7 +150,7 @@ For both plots, there isn't much of a distinct spectral signature any of the lan
 
 ## Applications of Spectral Signatures
 
-An interesting application of spectral signatures in academic studies is by [Corcione et al (2021)](https://www.mdpi.com/2072-4292/13/6/1183) which analyses the effects of low-backscattering areas of anthropogenic and natural origin on the azimuth autocorrelation function (AACF) using VV-polarised SAR measurements. This is of great interest for the marine pollution community to better differentiate between natural low-backscattering or human pollution.
+An interesting application of spectral signatures in academic studies is the analysis of the effects of low-backscattering areas of anthropogenic and natural origin on the azimuth autocorrelation function (AACF) using VV-polarised SAR measurements [@corcione2021]. This is of great interest for the marine pollution community to better differentiate between natural low-backscattering or human pollution.
 
 ## Reflection
 
@@ -172,6 +172,4 @@ We can also rely on landcovers classified by other researchers such as [Dynamic 
 
 Spectral signatures will be key in my remote sensing journey moving forward. Regarding resources for spectral signatures that might be useful in the future, there is the [USGS Spectral Library](https://www.usgs.gov/labs/spectroscopy-lab/science/spectral-library) where we can reference the spectral reflectance of various materials for identification purposes. There is also the [Awesome Spectral Indices list](https://github.com/awesome-spectral-indices/awesome-spectral-indices) which keeps track of classical and novel spectral indices for different Remote Sensing applications.
 
-## References
-
-Corcione, V. A. Buono, F. Nunziata and M. Migliaccio (2021) 'A Sensitivty Analysis on the Spectral Signatures of Low-Backscattering Sea Areas in Sentinel-1 SAR Images', Remote Sensing, 13(6), 1183; https://doi.org/10.3390/rs13061183.
+## 
