@@ -1,0 +1,128 @@
+# Week 6: Classification 1
+
+---
+title: "Week 6: Classification 1"
+editor: visual
+---
+
+## Learning Objectives
+
+## Summary of Key Concepts
+
+In this week's lecture we looked at examples of land-use/ landcover (LULC) that we had encountered before throughout this module, before diving into classification methodologies.
+
+Applications of LULC classifications include urban expansion (MacLachlan et al 2017), air pollution (Fuldalu and Alta 2021), urban green spaces (Shahtahmassebi et al 2021), forest monitoring (Hansen et al) and forest fires (Chuvieco and Congalton 1989). We then looked at classification methods which this learning diary entry will focus on.
+
+### Classification Methodologies: Classification and Regression Trees (CART)
+
+**Classification Trees**: Classifying data into 2 or more discrete categories
+
+What variable do we start a classification tree with (the root of the tree)? We use the Gini Impurity to determine that. The variable with the lowest impurity goes at the root, and use the Gini Impurity at each branch to split the nodes/ leaves.
+
+$$ Gini Impurity = 1 - (probability-of-yes)^2 - (probability-of-no)^2 $$
+
+Take weighted average for the variable too, and lowest impurity wins.
+
+We use classification trees for landcover classification
+
+**Regression Trees:** Predicting continuous dependent variables.
+
+We use Sum of Squared Residuals to divide the data into sections.
+
+Lowest SSR wins and is used as the root of the tree. Repeat process of finding SSR for each segment to continue the classification. Each leaf is a numeric value. We can do this with many predictor variables
+
+*Overfitting* occurs when we have a leaf with just one value (pure output). We want a good balance between bias and variance.
+
+To prevent overfitting, we limit how trees grow by setting a minimum number of observations in a leaf (from the top); (e.g. 20 pixels so that there is some degree of generalisation)
+
+*or* we can do weakest link pruning (with tree score). WLP prunes from the bottom. Tree score = SSR + tree penalty (alpha) \* T (number of leaves).
+
+Weakest Link Pruning process: Run a full tree with all data. Look at leaves' SSR. Remove a leaf, and see if SSR improves. To do that we use Tree Score. Key thing is tree penalty. We compute tree penalty by using a full size regression tree with all the data. Start with a value of 0 (which gives lowest tree score). Save values of alpha that gives a lower tree score than when a=0. Increase value of alpha until we get a lower tree score than the original.
+
+Train-test split (70-30). Use training data and use alpha values from before. Calculate SSR. Calculate alpha by letting it run.
+
+Using test data, and tree, calculate sum of squared residuals (for all values of alpha) --\> use the value of alpha which gives lowest tree score.
+
+Cross-validate by changing the data in test-train sets. Do it 10 times (ten-fold cross validation). Use the value of alpha that gives lowest SSR across all cross-validation
+
+This process makes the tree more generalisable, and is basically identifying the weakest leaves and removing them from the tree
+
+**Different classifiers give different results, but we can't really say one classifier is better than another**
+
+### Comparison of classifiers
+
+Decision tree deals with collinearity
+
+In a DT, each division could be based on different bands from input. While in SVM, its a multi-dimensional array plot and fitting planes
+
+RF and DT have low computation cost and easy to visualise
+
+SVM don't deal with collinearity because you're fitting a plane ((using x,y values) rather than dividng data
+
+Uses a lot of computer memory
+
+## Summary of Practical Content
+
+#### Overview:
+
+Load admin boundary vector data
+
+Load raster data by specifying image collection, date range, intersecting region of interest, and cloud percentage threshold.
+
+We can either use median value of all pixels through the image stack (lazy way that neglects temporal variation in data) or take deciles (Hansen's way) --\> pattern vector becomes much bigger to draw upon the seasonality of the data.
+
+Add polygons for landcovers we are interested in classifying *or use a pixel approach to get more accurate results*
+
+*Insert a train-test split here to test the model*
+
+Set the bands we are using for classification and classification property.
+
+Train classifier, classify image, and plot output.
+
+Note the trap of spatial autocorrelation when selecting POIs and pixels to train classifiers
+
+#### Practical Output
+
+For this practical I used Ulanbaatar, the capital of Mongolia. However, due to the level 2 Administrative Boundaries and to obtain different landcovers, the output covers the southern outskirts of Ulanbaatar.
+
+I first obtained an image stack that contained median values of all pixels over the date range (rather than percentiles).
+
+::: {#w6_figs_1 layout-ncol="2"}
+![True Colour of median values for Ulanbaatar](img/w6_raw_median.png){#w6_raw_med}
+
+![Google Maps' classification of features](img/w6_raw_gmap.png){#w6_raw_gmap}
+
+Ulanbaatar
+:::
+
+We see that the river appears more like a line in the satellite imagery while it is drawn as a polygon in Google Maps. We also note the demarcation of "forest" and "mountainous" areas on Google Maps and how it appears on the satellite imagery.
+
+::: {#w6_figs_2 layout-ncol="2"}
+![Classified Landcover](img/w6_classified.png){#w6_classified}
+
+![Classified Pixel Landcover](img/w6_classified_pixel.png){#w6_classified_pix}
+
+Comparing classification methods
+:::
+
+The first method trained the model using the polygons extracted, while the polygons I drew were not very precise, hence you can see polygons in the first image such as in the river and urban areas. The second method selected some pixels from each landcover class I drew, generated a train-test split, and extracted values to train the model. This pixel approach resulted in a smoother classification compared to the first one.
+
+::: {#w6_figs_3 layout-ncol="2"}
+![Large Classified Pixel Landcover](img/w6_classified_pixel_big.png){#w6_classified_big}
+
+![Large Landcover raw version](img/w6_classified_pixel_big_raw.png){#w6_classified_big_raw}
+
+Observing accuracy
+:::
+
+We see that for the large administrative area with multiple landcovers, the pixel method is fairly accurate, and the overall accuracy was 78.84%.
+
+## Application of Key Concepts and Skills
+
+With the accessibility of Google Earth Engine, there is an increasing number of landcover classification studies being done, some of which I presented in last week's learning diary entry.
+
+LULC Classification Methods (Phiri and Morgenroth 2017)
+
+Urban slum detection (Kohli Sliuza Stein 2016)
+
+## Reflection

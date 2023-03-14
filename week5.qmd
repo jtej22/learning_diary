@@ -1,74 +1,102 @@
 # Week 5: Google Earth Engine (GEE)
 
 ---
-title: "week4"
+title: "Week 5: Google Earth Engine (GEE)"
 editor: visual
 ---
 
-## The set up of GEE
+## Learning Objectives
 
-GEE is a geospatial processing service that allows geospatial analysis at scale (volume-wise). It takes code that users write and applies it to data on their servers. GEE has unique names for the types of data we use, "image" for what we know as raster data and "feature" for what we know as vectors. There is also ImageCollection and FeatureCollections, which are equivalents of raster stacks and (possibly?) geodatabases. GEE also uses Javascript
+-   Understand how GEE works
 
-### Client vs server side
+-   Familiarise self with using GEE and its functionalities.
+
+## Summary of Key Content
+
+### Background of Google Earth Engine
+
+GEE is a geospatial processing service that allows geospatial analysis at scale (volume-wise). It takes code that users write and applies it to data on their servers. GEE has unique names for the types of data we use, "image" for what we know as raster data and "feature" for what we know as vectors. There is also ImageCollection and FeatureCollections, which are equivalents of raster stacks and (possibly?) geodatabases. GEE also uses Javascript, which will be interesting as I have no prior exposure to Javascript.
+
+### Concept of Client vs Server side
 
 We can upload our own data on GEE, and that is on client side. But the other GEE data is on server side. We refer to these Earth Engine Objects using "ee" in front of it, and they are not available locally.
 
-This implies that we shouldn't loop on the server. Instead we create a function, and then apply it to what we want on the server. However, there are functions available on the server side too, and they are referred to with the ee in front too.
-
-Mapping is useful to be more computationally efficient when using GEE
+This implies that we shouldn't loop on the server. Instead we create a function, and then apply it to what we want on the server. However, there are functions available on the server side too, and they are referred to with the "ee" in front too. Mapping is useful to be more computationally efficient when using GEE
 
 ### Scale/ resolution
 
-Image scale in GEE refers to pixel resolution. When analysing in GEE, GEE aggregates the image to fit a 256x256 grid. We have to set the scale parameter we need otherwise GEE will resample using nearest neighbour. GEE is aggregating the values based on our analysis extent.
-
-Input the min and max for bands to control how the image is visualised as well.
+Image scale in GEE refers to pixel resolution. When analysing in GEE, GEE aggregates the image to fit a 256x256 grid. We have to set the scale parameter we need otherwise GEE will resample using nearest neighbour. GEE is aggregating the values based on our analysis extent. We can Input the minimum and maximum for bands to control how the image is visualised as well.
 
 ### Projections
 
 GEE uses EPSG 3857 as the default projection, and we do not need to worry about it until the end when we are exporting.
 
-## GEE in Action!
+## GEE in Action: Summary of Practical Content
 
-Objects: vectors, rasters, features, strings, numbers. Each class has specific methods for it.
+This week's practical covers skills that we have covered before, but in GEE such as optimising the imagery used for analysis, mosaicking and clipping images, as well as texturing, PCA and indices. For this practical, I will be using New Delhi, which is the city Andy used in the practical, as I view this practical as more of a way to familiarise myself with GEE and future GEE practicals will be attempted with other cities.
 
-We can build our query for the image collection! (practical)
+### GEE Data
 
-### Geometry Operations
+One thing that stood out to me was the wide variety of datasets available in Google Earth Engine's Data Catalog. There were datasets available for *Climate and Weather data* (Surface Temperatures, Climate models, Atmospheric Data, Weather), *Imagery* (Landsat, Sentinel), MODIS and High-Resolution Imagery) as well as *Geophysical data* (DEMs, Land Cover maps, Cropland and other datasets such as night-time imagery). This wide variety makes GEE very useful for multiple types of methodologies and analysis, and I would be interested in exploring all the other datasets if time permits.
 
-Joins
+### Scaling factors
 
--   Join inside a filter!
+Scaling factors from Landsat surface reflectance product is something we have not really encountered before, and it is helpful to know this for future processing of Landsat imagery. However, I have not been able to find a good explanation online on the need to scale the imagery. After using scaling the imagery, I obtained a similar image to Andy's.
 
--   Intersect
+```{r echo=FALSE, out.width = "100%", fig.align='center', cache=FALSE, fig.cap= "Fig. 1: True Colour"}
+knitr::include_graphics('img/true colour.png') 
+```
 
--   Subset
+After scaling, mosaicking (including obtaining the mean of overlapping pixels) and clipping was done to obtain a smoother image below that fit New Delhi's boundaries.
 
-Zonal Statistics
+```{r echo=FALSE, out.width = "100%", fig.align='center', cache=FALSE, fig.cap= "Fig. 2: Mosaicked and Clipped"}
+knitr::include_graphics('img/mosclip.png')
+```
 
-Filtering
+### Texturing
 
-### Methods
+Satellite image texture quantifies spectral and spatial variations in pixel values of an image [@farwell2021], therefore conveying information about spectral and spatial heterogeneity of image features [@haralick1973]. The specific statistical method we apply here is the [gray-level co-occurrence matrix (GLCM)](https://zia207.github.io/geospatial-r-github.io/texture-analysis.html) which is a tabulation of how often different combinations of pixel brightness values (gray levels) occur in an image [@hall-beyer2017]. It characterises the texture of an image by calculating how often pairs of pixels with specific values and in a specified spatial relationship occur in an image, thus creating a GLCM, and then statistical measures are extracted from this matrix. Texture measures then give us concepts like "contrast", "dissimilarity" and "entropy".
 
-Machine Learning
+We compute GLCM texture for our area of interest and obtain the following output:
 
-Supervised and Unsupervised classification
+```{r echo=FALSE, out.width = "100%", fig.align='center', cache=FALSE, fig.cap= "Fig. 3: GLCM Texture of New Delhi"}
+knitr::include_graphics('img/w5glcm.png')
+```
 
-Deep Learning with TensorFlow
+We then zoom in to a specific area to observe what the computed GLCM texture tells us:
 
-Exploring relationships between variables
+::: {#fig-glcm-comp layout-ncol="2"}
+![True Colour](img/glcm2.png){#fig-tc}
 
-### Applications/ Output
+![GLCM](img/glcm1.png){#fig-glcm}
 
-Online charts
+Comparison of True Colour Image and GLCM Texture to understand what it shows
+:::
 
-[Scalable applications with GEE data](https://github.com/philippgaertner/awesome-earth-engine-apps)
+We see that the purple spots in the GLCM texture appear to be buildings that are especially reflective in the True Colour image.
 
-### Reducing Images (how does this fit?)
+### PCA
 
-Reduce by region and regions, neighbourhoods
+When performing PCA, we are transforming the multi-spectral data we have into a uncorrelated and smaller dataset, while keeping most of the original information. The first component should also capture most of the variance within the dataset. This was the PCA output obtained:
 
-## Linear Regression
+```{r echo=FALSE, out.width = "100%", fig.align='center', cache=FALSE, fig.cap= "Fig. 4: PCA"}
+knitr::include_graphics('img/pca.png')
+```
 
-Observe change over time in pixel values using linear regression --\> reducer as we are reducing data to 2 iamges
+::: {#fig-pca-comp layout-ncol="2"}
+![True Colour](img/pca2.png){#fig-tc2}
 
-Lots of variations in
+![PCA](img/pca1.png){#fig-pca}
+
+Comparison of True Colour Image and PCA output to understand what it shows
+:::
+
+## Applications of key concepts
+
+GLCM and PCA can be used together in remote sensing research. In forestry mapping, such as mapping bamboo forests, textural features such as homogeneity, contrast, entropy and variance of GLCM can be used as classification features[@qi2022]. In this study, textural features were derived from the first component image from a PCA. In a object-oriented LULC classification study [@tassi2020], they used GLCM to first calculate textural indices from satellite imagery, and then doing a PCA of the most relevant GLCM metrics to synthesize the textural information. Based on what we observe from current literature, GLCM is usually used to extract textural information from the raster datasets, and PCA done to reduce the number of bands and extract key components, making further steps such as classification easier[@shafizadeh-moghadam2021].
+
+## Reflections
+
+This week's content has familiarised myself with GEE, and hopefully with further use of it, I will become better at understanding the breadth of functions it has in remote sensing analysis. I will also become more aware of limitations of GEE, such as how it might not be the best for doing in-depth geographic analysis with raster data as it has limited analytical functions compared to R for example. We saw how to do classic remote sensing processing steps such as mosaicking and clipping in GEE.
+
+The practical on texturing was useful in helping me understand how raster data works and how it can be used practically for landcover classification. This knowledge seems to be useful for what we'll be covering in future weeks.

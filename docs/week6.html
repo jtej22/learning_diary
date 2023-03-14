@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Josiah’s Remote Sensing Learning Diary - 7&nbsp; Week 6: Classification 1</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./week7.html" rel="next">
+<link href="./week5.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Josiah’s Remote Sensing Learning Diary</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week 6: Classification 1</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Week 1: Introduction to Remote Sensing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Week 2: Quarto and Xaringan</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Week 3: Corrections</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Week 4: Policy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week5.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week 5: Google Earth Engine (GEE)</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week6.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week 6: Classification 1</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week7.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 7: Classification 2</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">week8</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="toc-section-number">7.1</span>  Learning Objectives</a></li>
+  <li><a href="#summary-of-key-concepts" id="toc-summary-of-key-concepts" class="nav-link" data-scroll-target="#summary-of-key-concepts"><span class="toc-section-number">7.2</span>  Summary of Key Concepts</a>
+  <ul class="collapse">
+  <li><a href="#classification-methodologies-classification-and-regression-trees-cart" id="toc-classification-methodologies-classification-and-regression-trees-cart" class="nav-link" data-scroll-target="#classification-methodologies-classification-and-regression-trees-cart"><span class="toc-section-number">7.2.1</span>  Classification Methodologies: Classification and Regression Trees (CART)</a></li>
+  <li><a href="#comparison-of-classifiers" id="toc-comparison-of-classifiers" class="nav-link" data-scroll-target="#comparison-of-classifiers"><span class="toc-section-number">7.2.2</span>  Comparison of classifiers</a></li>
+  </ul></li>
+  <li><a href="#summary-of-practical-content" id="toc-summary-of-practical-content" class="nav-link" data-scroll-target="#summary-of-practical-content"><span class="toc-section-number">7.3</span>  Summary of Practical Content</a></li>
+  <li><a href="#application-of-key-concepts-and-skills" id="toc-application-of-key-concepts-and-skills" class="nav-link" data-scroll-target="#application-of-key-concepts-and-skills"><span class="toc-section-number">7.4</span>  Application of Key Concepts and Skills</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">7.5</span>  Reflection</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week 6: Classification 1</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="learning-objectives" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">7.1</span> Learning Objectives</h2>
+</section>
+<section id="summary-of-key-concepts" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="summary-of-key-concepts"><span class="header-section-number">7.2</span> Summary of Key Concepts</h2>
+<p>In this week’s lecture we looked at examples of land-use/ landcover (LULC) that we had encountered before throughout this module, before diving into classification methodologies.</p>
+<p>Applications of LULC classifications include urban expansion (MacLachlan et al 2017), air pollution (Fuldalu and Alta 2021), urban green spaces (Shahtahmassebi et al 2021), forest monitoring (Hansen et al) and forest fires (Chuvieco and Congalton 1989). We then looked at classification methods which this learning diary entry will focus on.</p>
+<section id="classification-methodologies-classification-and-regression-trees-cart" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="classification-methodologies-classification-and-regression-trees-cart"><span class="header-section-number">7.2.1</span> Classification Methodologies: Classification and Regression Trees (CART)</h3>
+<p><strong>Classification Trees</strong>: Classifying data into 2 or more discrete categories</p>
+<p>What variable do we start a classification tree with (the root of the tree)? We use the Gini Impurity to determine that. The variable with the lowest impurity goes at the root, and use the Gini Impurity at each branch to split the nodes/ leaves.</p>
+<p><span class="math display">\[ Gini Impurity = 1 - (probability-of-yes)^2 - (probability-of-no)^2 \]</span></p>
+<p>Take weighted average for the variable too, and lowest impurity wins.</p>
+<p>We use classification trees for landcover classification</p>
+<p><strong>Regression Trees:</strong> Predicting continuous dependent variables.</p>
+<p>We use Sum of Squared Residuals to divide the data into sections.</p>
+<p>Lowest SSR wins and is used as the root of the tree. Repeat process of finding SSR for each segment to continue the classification. Each leaf is a numeric value. We can do this with many predictor variables</p>
+<p><em>Overfitting</em> occurs when we have a leaf with just one value (pure output). We want a good balance between bias and variance.</p>
+<p>To prevent overfitting, we limit how trees grow by setting a minimum number of observations in a leaf (from the top); (e.g.&nbsp;20 pixels so that there is some degree of generalisation)</p>
+<p><em>or</em> we can do weakest link pruning (with tree score). WLP prunes from the bottom. Tree score = SSR + tree penalty (alpha) * T (number of leaves).</p>
+<p>Weakest Link Pruning process: Run a full tree with all data. Look at leaves’ SSR. Remove a leaf, and see if SSR improves. To do that we use Tree Score. Key thing is tree penalty. We compute tree penalty by using a full size regression tree with all the data. Start with a value of 0 (which gives lowest tree score). Save values of alpha that gives a lower tree score than when a=0. Increase value of alpha until we get a lower tree score than the original.</p>
+<p>Train-test split (70-30). Use training data and use alpha values from before. Calculate SSR. Calculate alpha by letting it run.</p>
+<p>Using test data, and tree, calculate sum of squared residuals (for all values of alpha) –&gt; use the value of alpha which gives lowest tree score.</p>
+<p>Cross-validate by changing the data in test-train sets. Do it 10 times (ten-fold cross validation). Use the value of alpha that gives lowest SSR across all cross-validation</p>
+<p>This process makes the tree more generalisable, and is basically identifying the weakest leaves and removing them from the tree</p>
+<p><strong>Different classifiers give different results, but we can’t really say one classifier is better than another</strong></p>
+</section>
+<section id="comparison-of-classifiers" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="comparison-of-classifiers"><span class="header-section-number">7.2.2</span> Comparison of classifiers</h3>
+<p>Decision tree deals with collinearity</p>
+<p>In a DT, each division could be based on different bands from input. While in SVM, its a multi-dimensional array plot and fitting planes</p>
+<p>RF and DT have low computation cost and easy to visualise</p>
+<p>SVM don’t deal with collinearity because you’re fitting a plane ((using x,y values) rather than dividng data</p>
+<p>Uses a lot of computer memory</p>
+</section>
+</section>
+<section id="summary-of-practical-content" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="summary-of-practical-content"><span class="header-section-number">7.3</span> Summary of Practical Content</h2>
+<section id="overview" class="level4" data-number="7.3.0.1">
+<h4 data-number="7.3.0.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">7.3.0.1</span> Overview:</h4>
+<p>Load admin boundary vector data</p>
+<p>Load raster data by specifying image collection, date range, intersecting region of interest, and cloud percentage threshold.</p>
+<p>We can either use median value of all pixels through the image stack (lazy way that neglects temporal variation in data) or take deciles (Hansen’s way) –&gt; pattern vector becomes much bigger to draw upon the seasonality of the data.</p>
+<p>Add polygons for landcovers we are interested in classifying <em>or use a pixel approach to get more accurate results</em></p>
+<p><em>Insert a train-test split here to test the model</em></p>
+<p>Set the bands we are using for classification and classification property.</p>
+<p>Train classifier, classify image, and plot output.</p>
+<p>Note the trap of spatial autocorrelation when selecting POIs and pixels to train classifiers</p>
+</section>
+<section id="practical-output" class="level4" data-number="7.3.0.2">
+<h4 data-number="7.3.0.2" class="anchored" data-anchor-id="practical-output"><span class="header-section-number">7.3.0.2</span> Practical Output</h4>
+<p>For this practical I used Ulanbaatar, the capital of Mongolia. However, due to the level 2 Administrative Boundaries and to obtain different landcovers, the output covers the southern outskirts of Ulanbaatar.</p>
+<p>I first obtained an image stack that contained median values of all pixels over the date range (rather than percentiles).</p>
+<div id="w6_figs_1" class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div id="w6_raw_med" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/w6_raw_median.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">True Colour of median values for Ulanbaatar</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div id="w6_raw_gmap" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/w6_raw_gmap.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Google Maps’ classification of features</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p>Ulanbaatar</p>
+</div>
+</div>
+</div>
+<p>We see that the river appears more like a line in the satellite imagery while it is drawn as a polygon in Google Maps. We also note the demarcation of “forest” and “mountainous” areas on Google Maps and how it appears on the satellite imagery.</p>
+<div id="w6_figs_2" class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div id="w6_classified" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/w6_classified.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Classified Landcover</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div id="w6_classified_pix" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/w6_classified_pixel.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Classified Pixel Landcover</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p>Comparing classification methods</p>
+</div>
+</div>
+</div>
+<p>The first method trained the model using the polygons extracted, while the polygons I drew were not very precise, hence you can see polygons in the first image such as in the river and urban areas. The second method selected some pixels from each landcover class I drew, generated a train-test split, and extracted values to train the model. This pixel approach resulted in a smoother classification compared to the first one.</p>
+<div id="w6_figs_3" class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div id="w6_classified_big" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/w6_classified_pixel_big.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Large Classified Pixel Landcover</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div id="w6_classified_big_raw" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/w6_classified_pixel_big_raw.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Large Landcover raw version</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p>Observing accuracy</p>
+</div>
+</div>
+</div>
+<p>We see that for the large administrative area with multiple landcovers, the pixel method is fairly accurate, and the overall accuracy was 78.84%.</p>
+</section>
+</section>
+<section id="application-of-key-concepts-and-skills" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="application-of-key-concepts-and-skills"><span class="header-section-number">7.4</span> Application of Key Concepts and Skills</h2>
+<p>With the accessibility of Google Earth Engine, there is an increasing number of landcover classification studies being done, some of which I presented in last week’s learning diary entry.</p>
+<p>LULC Classification Methods (Phiri and Morgenroth 2017)</p>
+<p>Urban slum detection (Kohli Sliuza Stein 2016)</p>
+</section>
+<section id="reflection" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="reflection"><span class="header-section-number">7.5</span> Reflection</h2>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } 
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./week5.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week 5: Google Earth Engine (GEE)</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./week7.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 7: Classification 2</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

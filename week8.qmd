@@ -1,0 +1,86 @@
+# Week 8: Temperature and Policy
+
+---
+title: "week8"
+editor: visual
+---
+
+## Lecture Summary: Temperature and Policy
+
+### Urban Heat Island
+
+Urban areas are of higher temperatures
+
+2 main factors:
+
+-   More dark surfaces that retain heat
+
+-   Less vegetation cooling the environment
+
+Other factors:
+
+-   Low Sky View Factor
+
+-   Air speed, cloud cover, cyclic solar radiation, building material and athropogenic energy
+
+**Cost of Urban Heat**:
+
+-   **Social**
+
+-   **Environmental**
+
+    -   Positive feedback loop
+
+-   **Economic**
+
+    -   Only Melbourne has assessed the cost of Urban Heat Island effect before
+
+    -   UHI not really included in climate prediction models (Estrada et al 2017)
+
+**Global Policy Documents/ Goals related to UHI**
+
+-   New Urban Agenda
+
+-   Sustainable Development Goals (SDGs)
+
+-   COP26
+
+### **Beat the Heat Handbook Case Studies**
+
+**Superblocks**
+
+**Medellin Green Corridors**
+
+**Turn Down the Heat Strategy and Action Plan**
+
+**Chicago 1995 Heatwave**
+
+### Metropolitan UHI Reduction Strategies
+
+**London Plan**
+
+**Singapore Master Plan**
+
+## Lecture and Practical Summary: Extracting Temperature from Satellite Data
+
+### Methodology to extract temperature per spatial unit
+
+-   Spatial data
+
+-   Temperature datasets (MODIS, Landsat etc)
+
+    -   collection
+
+    -   filter for standard stuff
+
+-   Zonal statistics
+
+-   output shapefile
+
+### Mean Radiant Temperature
+
+## Applications
+
+## Reflections
+
+How achievable are these policy suggestions at various scales?

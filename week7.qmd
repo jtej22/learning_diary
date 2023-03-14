@@ -1,0 +1,99 @@
+# Week 7: Classification 2
+
+---
+title: "Week 7: Classification 2"
+format: html
+editor: visual
+---
+
+## Summary of Lecture Content
+
+### Landcover classification
+
+Object-based image analysis (OBIA)
+
+-   Superpixels
+
+-   Simple Linear Iterative Clustering (SLIC) Algorithm for superpixel generation
+
+-   Considers shapes based on similarity/ difference
+
+-   Parameters: distance (closeness to centre) and homogeneity of colours
+
+Sub-pixel analysis/ sub pixel classification/ spectral mixture analysis/ linear spectral unmixing
+
+-   estimate fractions that make up a pixel
+
+-   few endmembers that are spectrally pure
+
+    -   Spectral library
+
+    -   From image
+
+    -   labwork
+
+    -   Sub pixel analysis matrices: GEE makes it unconstrained by default, but constrain by setting sum to 1
+
+-   Makes a map of fractions
+
+-   Number of endmembers: Vegetation--Impervious Surface- Soil model
+
+-   Multiple endmember spectral analysis (MESMA)
+
+### Accuracy
+
+-   PA Producer accuracy
+
+-   UA User Accuracy
+
+-   OA Overall Accuracy
+
+-   Confusion matrix
+
+-   Fuzzy matrix
+
+-   Kappa
+
+### Beyond remote sensing and into machine learning
+
+Combine into F1 score (Both PA and UA)
+
+F1 doesnt consider true negatives
+
+but depends on threshold
+
+Receiver Operating Characteristic Curve
+
+Calc area under curve
+
+Cross-validation
+
+Spatial auto-correlation
+
+so use spatial cross-validation ideally
+
+### Spatial Cross-Validation
+
+-   Spatially partition the folded data
+
+-   Distance threshold (GEE)
+
+-   Disjoint (no common boundary) using k-means clustering
+
+-   **Support Vector Machine**
+
+    -   Lovelace: rather than using each fold to figure out C and gamma (overfits), take random sample from fold then get C and gamma.
+
+    -   Not available in GEE yet but available in R
+
+    -   GEE specific to satellite imagery, hard to do vector analysis and stuff
+
+## Application
+
+However, one challenge for landcover classification is that of urban areas. Identifying and delineating urban areas is still a challenge because of the difficulty of disentangling surface reflectance of pixels due to the varied types of surface materials and structures in urban areas [@herold2003; @varshney2014; @maclachlan2017]. Spatial resolution is thus an important factor for accurate monitoring of LULC change.
+
+Accurate estimation of urban areas is also important as it is also used in other applications such as climate models or investigating urban heat island effects. What I found interesting in Andy's article [-@maclachlan2017] is how remote sensing methods are still developing and improving. In his article, he compares the use of Support Vector Machine (SVM) spectral unmixing and the novel sub and hard pixel Import Vector Machine (IVM) classifier. It also covers VIS (week 7)
+
+challenges in urban areas (Zhou et al 2009)
+
+## Reflection
