@@ -20,6 +20,25 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -32,6 +51,7 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <link href="./week7.html" rel="next">
 <link href="./week5.html" rel="prev">
+<link href="./img/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -219,7 +239,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="overview-of-content" class="level3" data-number="6.2.1">
 <h3 data-number="6.2.1" class="anchored" data-anchor-id="overview-of-content"><span class="header-section-number">6.2.1</span> Overview of content:</h3>
 <p>In this week’s lecture we looked at examples of land-use/ landcover (LULC) that we had encountered before throughout this module, before diving into classification methodologies.</p>
-<p>Applications of LULC classifications include urban expansion (MacLachlan et al 2017), air pollution (Fuldalu and Alta 2021), urban green spaces (Shahtahmassebi et al 2021), forest monitoring (Hansen et al) and forest fires (Chuvieco and Congalton 1989). We then looked at classification methods which this learning diary entry will focus on.</p>
+<p>Applications of LULC classifications include urban expansion <span class="citation" data-cites="maclachlan2017b">(<a href="references.html#ref-maclachlan2017b" role="doc-biblioref">MacLachlan et al. 2017</a>)</span> , air pollution <span class="citation" data-cites="fuladlu2021">(<a href="references.html#ref-fuladlu2021" role="doc-biblioref">Fuladlu and Altan 2021</a>)</span>, urban green spaces <span class="citation" data-cites="shahtahmassebi2021">(<a href="references.html#ref-shahtahmassebi2021" role="doc-biblioref">Shahtahmassebi et al. 2021</a>)</span>, forest monitoring <span class="citation" data-cites="hansen2013">(<a href="references.html#ref-hansen2013" role="doc-biblioref">Hansen et al. 2013</a>)</span> and forest fires <span class="citation" data-cites="chuvieco1989">(<a href="references.html#ref-chuvieco1989" role="doc-biblioref">Chuvieco and Congalton 1989</a>)</span>. We then looked at classification methods which this learning diary entry will focus on.</p>
 </section>
 <section id="classification-methodologies-classification-and-regression-trees-cart" class="level3" data-number="6.2.2">
 <h3 data-number="6.2.2" class="anchored" data-anchor-id="classification-methodologies-classification-and-regression-trees-cart"><span class="header-section-number">6.2.2</span> Classification Methodologies: Classification and Regression Trees (CART)</h3>
@@ -243,11 +263,12 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="comparison-of-classifiers" class="level3" data-number="6.2.3">
 <h3 data-number="6.2.3" class="anchored" data-anchor-id="comparison-of-classifiers"><span class="header-section-number">6.2.3</span> Comparison of classifiers</h3>
-<p>Decision tree deals with collinearity</p>
-<p>In a DT, each division could be based on different bands from input. While in SVM, its a multi-dimensional array plot and fitting planes</p>
-<p>RF and DT have low computation cost and easy to visualise</p>
-<p>SVM don’t deal with collinearity because you’re fitting a plane ((using x,y values) rather than dividng data</p>
-<p>Uses a lot of computer memory</p>
+<ul>
+<li><p>Decision Tree deals with collinearity.</p></li>
+<li><p>In a Decision Tree, each division could be based on different bands from input. While in SVM, its a multi-dimensional array plot and fitting planes.</p></li>
+<li><p>RandomForest and Decision Trees have low computation cost and easy to visualise</p></li>
+<li><p>Support Vector Machine does not deal with collinearity because we’re fitting a plane ((using x,y values) rather than dividing data</p></li>
+</ul>
 </section>
 </section>
 <section id="summary-of-practical-content" class="level2" data-number="6.3">
@@ -350,7 +371,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="application-of-key-concepts-and-skills" class="level2" data-number="6.4">
 <h2 data-number="6.4" class="anchored" data-anchor-id="application-of-key-concepts-and-skills"><span class="header-section-number">6.4</span> Application of Key Concepts and Skills</h2>
 <p>With the accessibility of Google Earth Engine, there is an increasing number of landcover classification studies being done, some of which I presented in last week’s learning diary entry. For this learning diary, I will focus on various types of LULC classification methods and how they differ.</p>
-<p>Phiri and Morgenroth’s <span class="citation" data-cites="phiri2017">[-@phiri2017]</span> review of LULC classification methods and how they have evolved over time is especially insightful and summarises these developments well. They mention how most classification methods (e.g.&nbsp;) were developed in the 1970s and 80s, but advancements in classifiers and algorithms have come after the 2000s.</p>
+<p>Phiri and Morgenroth’s <span class="citation" data-cites="phiri2017">(<a href="references.html#ref-phiri2017" role="doc-biblioref">2017</a>)</span> review of LULC classification methods and how they have evolved over time is especially insightful and summarises these developments well. They mention how most classification methods (e.g.&nbsp;) were developed in the 1970s and 80s, but advancements in classifiers and algorithms have come after the 2000s.</p>
 <table class="table">
 <caption>Table 1: History of LULC</caption>
 <colgroup>
@@ -391,7 +412,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Moderate-Resolution Imaging Spectroradiometer (MODIS)</p></li>
 <li><p>And more recently radar, LiDAR and SAR data</p></li>
 </ul></li>
-<li><p>OBIA tends to result in greater accuracy than pixel-based classifications due to OBIA’s segmentation algorithms and the ability to use spectral, textural and neighbourhood information in classification <span class="citation" data-cites="huth2012">[@huth2012]</span></p></li>
+<li><p>OBIA tends to result in greater accuracy than pixel-based classifications due to OBIA’s segmentation algorithms and the ability to use spectral, textural and neighbourhood information in classification <span class="citation" data-cites="huth2012">(<a href="references.html#ref-huth2012" role="doc-biblioref">Huth et al. 2012</a>)</span></p></li>
 </ul></td>
 </tr>
 <tr class="even">
@@ -410,7 +431,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-<p>They <span class="citation" data-cites="phiri2017">[-@phiri2017]</span> concluded that OBIA classification seems to be the most common method and has major advantages, but its limitations include challenges in selecting the optimal segmentation scale, which can generate errors due to over- or under-segmentation, and misclassification of small landcover types due to the low/medium spatial resolution of Landsat images. There is not one best classification method for Landsat images, but researchers have to weigh strengths and limitations of each methods for their research purposes, and consider factors such as pre-processing quality and type of Landsat images being used. Some sources of errors in pre-processing include orthorectification and radiometric correction, which brings us back to what we learnt in week 3 about corrections, and we have to be conscious about such sources of errors and not assume all images are perfectly corrected.</p>
+<p>They <span class="citation" data-cites="phiri2017">(<a href="references.html#ref-phiri2017" role="doc-biblioref">2017</a>)</span> concluded that OBIA classification seems to be the most common method and has major advantages, but its limitations include challenges in selecting the optimal segmentation scale, which can generate errors due to over- or under-segmentation, and misclassification of small landcover types due to the low/medium spatial resolution of Landsat images. There is not one best classification method for Landsat images, but researchers have to weigh strengths and limitations of each methods for their research purposes, and consider factors such as pre-processing quality and type of Landsat images being used. Some sources of errors in pre-processing include orthorectification and radiometric correction, which brings us back to what we learnt in week 3 about corrections, and we have to be conscious about such sources of errors and not assume all images are perfectly corrected.</p>
 </section>
 <section id="reflection" class="level2" data-number="6.5">
 <h2 data-number="6.5" class="anchored" data-anchor-id="reflection"><span class="header-section-number">6.5</span> Reflection</h2>
@@ -418,6 +439,29 @@ ul.task-list li input[type="checkbox"] {
 <p>The article covered in the Application section was also particularly helpful in understanding how landcover classification in remote sensing has evolved over time. It is also a reminder of how as remote sensing researchers, we should remain curious and updated with new developments in methodologies in the remote sensing field, as it is constantly evolving and growing.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-chuvieco1989" class="csl-entry" role="doc-biblioentry">
+Chuvieco, Emilio, and Russell G. Congalton. 1989. <span>“Application of Remote Sensing and Geographic Information Systems to Forest Fire Hazard Mapping.”</span> <em>Remote Sensing of Environment</em> 29 (2): 147–59. <a href="https://doi.org/10.1016/0034-4257(89)90023-0">https://doi.org/10.1016/0034-4257(89)90023-0</a>.
+</div>
+<div id="ref-fuladlu2021" class="csl-entry" role="doc-biblioentry">
+Fuladlu, Kamyar, and Haşim Altan. 2021. <span>“Examining Land Surface Temperature and Relations with the Major Air Pollutants: A Remote Sensing Research in Case of Tehran.”</span> <em>Urban Climate</em> 39 (September): 100958. <a href="https://doi.org/10.1016/j.uclim.2021.100958">https://doi.org/10.1016/j.uclim.2021.100958</a>.
+</div>
+<div id="ref-hansen2013" class="csl-entry" role="doc-biblioentry">
+Hansen, M. C., P. V. Potapov, R. Moore, M. Hancher, S. A. Turubanova, A. Tyukavina, D. Thau, et al. 2013. <span>“High-Resolution Global Maps of 21st-Century Forest Cover Change.”</span> <em>Science</em> 342 (6160): 850–53. <a href="https://doi.org/10.1126/science.1244693">https://doi.org/10.1126/science.1244693</a>.
+</div>
+<div id="ref-huth2012" class="csl-entry" role="doc-biblioentry">
+Huth, Juliane, Claudia Kuenzer, Thilo Wehrmann, Steffen Gebhardt, Vo Quoc Tuan, and Stefan Dech. 2012. <span>“Land Cover and Land Use Classification with TWOPAC: Towards Automated Processing for Pixel- and Object-Based Image Classification.”</span> <em>Remote Sensing</em> 4 (9): 2530–53. <a href="https://doi.org/10.3390/rs4092530">https://doi.org/10.3390/rs4092530</a>.
+</div>
+<div id="ref-maclachlan2017b" class="csl-entry" role="doc-biblioentry">
+MacLachlan, Andrew, Eloise Biggs, Gareth Roberts, and Bryan Boruff. 2017. <span>“Urban Growth Dynamics in Perth, Western Australia: Using Applied Remote Sensing for Sustainable Future Planning.”</span> <em>Land</em> 6 (1): 9. <a href="https://doi.org/10.3390/land6010009">https://doi.org/10.3390/land6010009</a>.
+</div>
+<div id="ref-phiri2017" class="csl-entry" role="doc-biblioentry">
+Phiri, Darius, and Justin Morgenroth. 2017. <span>“Developments in Landsat Land Cover Classification Methods: A Review.”</span> <em>Remote Sensing</em> 9 (9): 967. <a href="https://doi.org/10.3390/rs9090967">https://doi.org/10.3390/rs9090967</a>.
+</div>
+<div id="ref-shahtahmassebi2021" class="csl-entry" role="doc-biblioentry">
+Shahtahmassebi, Amir Reza, Chenlu Li, Yifan Fan, Yani Wu, Yue lin, Muye Gan, Ke Wang, Arunima Malik, and George Alan Blackburn. 2021. <span>“Remote Sensing of Urban Green Spaces: A Review.”</span> <em>Urban Forestry &amp; Urban Greening</em> 57 (January): 126946. <a href="https://doi.org/10.1016/j.ufug.2020.126946">https://doi.org/10.1016/j.ufug.2020.126946</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

@@ -19,7 +19,7 @@ editor: visual
 
 In this week's lecture we looked at examples of land-use/ landcover (LULC) that we had encountered before throughout this module, before diving into classification methodologies.
 
-Applications of LULC classifications include urban expansion (MacLachlan et al 2017), air pollution (Fuldalu and Alta 2021), urban green spaces (Shahtahmassebi et al 2021), forest monitoring (Hansen et al) and forest fires (Chuvieco and Congalton 1989). We then looked at classification methods which this learning diary entry will focus on.
+Applications of LULC classifications include urban expansion [@maclachlan2017b] , air pollution [@fuladlu2021], urban green spaces [@shahtahmassebi2021], forest monitoring [@hansen2013] and forest fires [@chuvieco1989]. We then looked at classification methods which this learning diary entry will focus on.
 
 ### Classification Methodologies: Classification and Regression Trees (CART)
 
@@ -59,15 +59,13 @@ This process makes the tree more generalisable, and is basically identifying the
 
 ### Comparison of classifiers
 
-Decision tree deals with collinearity
+-   Decision Tree deals with collinearity.
 
-In a DT, each division could be based on different bands from input. While in SVM, its a multi-dimensional array plot and fitting planes
+-   In a Decision Tree, each division could be based on different bands from input. While in SVM, its a multi-dimensional array plot and fitting planes.
 
-RF and DT have low computation cost and easy to visualise
+-   RandomForest and Decision Trees have low computation cost and easy to visualise
 
-SVM don't deal with collinearity because you're fitting a plane ((using x,y values) rather than dividng data
-
-Uses a lot of computer memory
+-   Support Vector Machine does not deal with collinearity because we're fitting a plane ((using x,y values) rather than dividing data
 
 ## Summary of Practical Content
 
