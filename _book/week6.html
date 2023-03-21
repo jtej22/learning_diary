@@ -20,25 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
 </style>
 
 
@@ -196,7 +177,11 @@ div.csl-indent {
   <li><a href="#classification-methodologies-classification-and-regression-trees-cart" id="toc-classification-methodologies-classification-and-regression-trees-cart" class="nav-link" data-scroll-target="#classification-methodologies-classification-and-regression-trees-cart"><span class="toc-section-number">6.2.2</span>  Classification Methodologies: Classification and Regression Trees (CART)</a></li>
   <li><a href="#comparison-of-classifiers" id="toc-comparison-of-classifiers" class="nav-link" data-scroll-target="#comparison-of-classifiers"><span class="toc-section-number">6.2.3</span>  Comparison of classifiers</a></li>
   </ul></li>
-  <li><a href="#summary-of-practical-content" id="toc-summary-of-practical-content" class="nav-link" data-scroll-target="#summary-of-practical-content"><span class="toc-section-number">6.3</span>  Summary of Practical Content</a></li>
+  <li><a href="#summary-of-practical-content" id="toc-summary-of-practical-content" class="nav-link" data-scroll-target="#summary-of-practical-content"><span class="toc-section-number">6.3</span>  Summary of Practical Content</a>
+  <ul class="collapse">
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview"><span class="toc-section-number">6.3.1</span>  Overview:</a></li>
+  <li><a href="#practical-output" id="toc-practical-output" class="nav-link" data-scroll-target="#practical-output"><span class="toc-section-number">6.3.2</span>  Practical Output</a></li>
+  </ul></li>
   <li><a href="#application-of-key-concepts-and-skills" id="toc-application-of-key-concepts-and-skills" class="nav-link" data-scroll-target="#application-of-key-concepts-and-skills"><span class="toc-section-number">6.4</span>  Application of Key Concepts and Skills</a></li>
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">6.5</span>  Reflection</a></li>
   </ul>
@@ -224,7 +209,7 @@ div.csl-indent {
 <section id="learning-objectives" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">6.1</span> Learning Objectives</h2>
 <ul>
-<li><p>Using vector and EO Data</p></li>
+<li><p>Use vector and EO Data</p></li>
 <li><p>Landuse Landcover Classification Methods</p></li>
 <li><p>Train-test splits</p></li>
 </ul>
@@ -267,8 +252,8 @@ div.csl-indent {
 </section>
 <section id="summary-of-practical-content" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="summary-of-practical-content"><span class="header-section-number">6.3</span> Summary of Practical Content</h2>
-<section id="overview" class="level4" data-number="6.3.0.1">
-<h4 data-number="6.3.0.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">6.3.0.1</span> Overview:</h4>
+<section id="overview" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">6.3.1</span> Overview:</h3>
 <p>Load admin boundary vector data</p>
 <p>Load raster data by specifying image collection, date range, intersecting region of interest, and cloud percentage threshold.</p>
 <p>We can either use median value of all pixels through the image stack (lazy way that neglects temporal variation in data) or take deciles (Hansen’s way) –&gt; pattern vector becomes much bigger to draw upon the seasonality of the data.</p>
@@ -278,8 +263,8 @@ div.csl-indent {
 <p>Train classifier, classify image, and plot output.</p>
 <p>Note the trap of spatial autocorrelation when selecting POIs and pixels to train classifiers</p>
 </section>
-<section id="practical-output" class="level4" data-number="6.3.0.2">
-<h4 data-number="6.3.0.2" class="anchored" data-anchor-id="practical-output"><span class="header-section-number">6.3.0.2</span> Practical Output</h4>
+<section id="practical-output" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="practical-output"><span class="header-section-number">6.3.2</span> Practical Output</h3>
 <p>For this practical I used Ulanbaatar, the capital of Mongolia. However, due to the level 2 Administrative Boundaries and to obtain different landcovers, the output covers the southern outskirts of Ulanbaatar.</p>
 <p>I first obtained an image stack that contained median values of all pixels over the date range (rather than percentiles).</p>
 <div id="w6_figs_1" class="quarto-layout-panel">
@@ -365,12 +350,12 @@ div.csl-indent {
 <section id="application-of-key-concepts-and-skills" class="level2" data-number="6.4">
 <h2 data-number="6.4" class="anchored" data-anchor-id="application-of-key-concepts-and-skills"><span class="header-section-number">6.4</span> Application of Key Concepts and Skills</h2>
 <p>With the accessibility of Google Earth Engine, there is an increasing number of landcover classification studies being done, some of which I presented in last week’s learning diary entry. For this learning diary, I will focus on various types of LULC classification methods and how they differ.</p>
-<p>Phiri and Morgenroth’s <span class="citation" data-cites="phiri2017">(<a href="references.html#ref-phiri2017" role="doc-biblioref">2017</a>)</span> review of LULC classification methods and how they have evolved over time is especially insightful and summarises these developments well. They mention how most classification methods (e.g.&nbsp;) were developed in the 1970s and 80s, but advancements in classifiers and algorithms have come after the 2000s.</p>
+<p>Phiri and Morgenroth’s <span class="citation" data-cites="phiri2017">[-@phiri2017]</span> review of LULC classification methods and how they have evolved over time is especially insightful and summarises these developments well. They mention how most classification methods (e.g.&nbsp;) were developed in the 1970s and 80s, but advancements in classifiers and algorithms have come after the 2000s.</p>
 <table class="table">
 <caption>Table 1: History of LULC</caption>
 <colgroup>
-<col style="width: 7%">
-<col style="width: 92%">
+<col style="width: 5%">
+<col style="width: 94%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -406,7 +391,7 @@ div.csl-indent {
 <li><p>Moderate-Resolution Imaging Spectroradiometer (MODIS)</p></li>
 <li><p>And more recently radar, LiDAR and SAR data</p></li>
 </ul></li>
-<li><p>OBIA tends to result in greater accuracy than pixel-based classifications due to OBIA’s segmentation algorithms and the ability to use spectral, textural and neighbourhood information in classification <span class="citation" data-cites="huth2012">(<a href="references.html#ref-huth2012" role="doc-biblioref">Huth <em>et al.</em>, 2012</a>)</span></p></li>
+<li><p>OBIA tends to result in greater accuracy than pixel-based classifications due to OBIA’s segmentation algorithms and the ability to use spectral, textural and neighbourhood information in classification <span class="citation" data-cites="huth2012">[@huth2012]</span></p></li>
 </ul></td>
 </tr>
 <tr class="even">
@@ -425,7 +410,7 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
-<p>They <span class="citation" data-cites="phiri2017">(<a href="references.html#ref-phiri2017" role="doc-biblioref">2017</a>)</span> concluded that OBIA classification seems to be the most common method and has major advantages, but its limitations include challenges in selecting the optimal segmentation scale, which can generate errors due to over- or under-segmentation, and misclassification of small landcover types due to the low/medium spatial resolution of Landsat images. There is not one best classification method for Landsat images, but researchers have to weigh strengths and limitations of each methods for their research purposes, and consider factors such as pre-processing quality and type of Landsat images being used. Some sources of errors in pre-processing include orthorectification and radiometric correction, which brings us back to what we learnt in week 3 about corrections, and we have to be conscious about such sources of errors and not assume all images are perfectly corrected.</p>
+<p>They <span class="citation" data-cites="phiri2017">[-@phiri2017]</span> concluded that OBIA classification seems to be the most common method and has major advantages, but its limitations include challenges in selecting the optimal segmentation scale, which can generate errors due to over- or under-segmentation, and misclassification of small landcover types due to the low/medium spatial resolution of Landsat images. There is not one best classification method for Landsat images, but researchers have to weigh strengths and limitations of each methods for their research purposes, and consider factors such as pre-processing quality and type of Landsat images being used. Some sources of errors in pre-processing include orthorectification and radiometric correction, which brings us back to what we learnt in week 3 about corrections, and we have to be conscious about such sources of errors and not assume all images are perfectly corrected.</p>
 </section>
 <section id="reflection" class="level2" data-number="6.5">
 <h2 data-number="6.5" class="anchored" data-anchor-id="reflection"><span class="header-section-number">6.5</span> Reflection</h2>
@@ -433,14 +418,6 @@ div.csl-indent {
 <p>The article covered in the Application section was also particularly helpful in understanding how landcover classification in remote sensing has evolved over time. It is also a reminder of how as remote sensing researchers, we should remain curious and updated with new developments in methodologies in the remote sensing field, as it is constantly evolving and growing.</p>
 
 
-<div id="refs" class="references csl-bib-body" role="doc-bibliography" style="display: none">
-<div id="ref-huth2012" class="csl-entry" role="doc-biblioentry">
-Huth, J. <em>et al.</em> (2012) <span>“Land Cover and Land Use Classification with TWOPAC: towards Automated Processing for Pixel- and Object-Based Image Classification,”</span> <em>Remote Sensing</em>, 4(9), pp. 2530–2553. doi: <a href="https://doi.org/10.3390/rs4092530">10.3390/rs4092530</a>.
-</div>
-<div id="ref-phiri2017" class="csl-entry" role="doc-biblioentry">
-Phiri, D. and Morgenroth, J. (2017) <span>“Developments in Landsat Land Cover Classification Methods: A Review,”</span> <em>Remote Sensing</em>, 9(9), p. 967. doi: <a href="https://doi.org/10.3390/rs9090967">10.3390/rs9090967</a>.
-</div>
-</div>
 </section>
 
 </main> <!-- /main -->

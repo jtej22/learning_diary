@@ -23,15 +23,17 @@ book:
     - week7.qmd
     - week8.qmd
     - references.qmd
+  favicon: "img/favicon.ico"
 
 bibliography: references.bib
-csl: harvard-cite-them-right.csl
+#csl: harvard-cite-them-right.csl
 
 format:
   html:
     theme:
         light: [cosmo, flatly]
         dark: [cosmo, darkly]
+    cite-method: citeproc
   pdf:
     documentclass: scrreprt
 

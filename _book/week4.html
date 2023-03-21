@@ -20,25 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
 </style>
 
 
@@ -189,8 +170,11 @@ div.csl-indent {
    
   <ul>
   <li><a href="#city-and-policy-summary" id="toc-city-and-policy-summary" class="nav-link active" data-scroll-target="#city-and-policy-summary"><span class="toc-section-number">4.1</span>  City and Policy Summary</a></li>
-  <li><a href="#application-of-remotely-sensed-data-to-the-city-in-nature-goal" id="toc-application-of-remotely-sensed-data-to-the-city-in-nature-goal" class="nav-link" data-scroll-target="#application-of-remotely-sensed-data-to-the-city-in-nature-goal"><span class="toc-section-number">4.2</span>  Application of remotely sensed data to the <em>City in Nature</em> goal</a></li>
-  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">4.3</span>  Reflection</a></li>
+  <li><a href="#application-of-remotely-sensed-data-to-the-city-in-nature-goal" id="toc-application-of-remotely-sensed-data-to-the-city-in-nature-goal" class="nav-link" data-scroll-target="#application-of-remotely-sensed-data-to-the-city-in-nature-goal"><span class="toc-section-number">4.2</span>  Application of remotely sensed data to the <em>City in Nature</em> goal</a>
+  <ul class="collapse">
+  <li><a href="#proposal" id="toc-proposal" class="nav-link" data-scroll-target="#proposal"><span class="toc-section-number">4.2.1</span>  Proposal</a></li>
+  </ul></li>
+  <li><a href="#reflections" id="toc-reflections" class="nav-link" data-scroll-target="#reflections"><span class="toc-section-number">4.3</span>  Reflections</a></li>
   </ul>
 </nav>
     </div>
@@ -245,44 +229,21 @@ div.csl-indent {
 <h2 data-number="4.2" class="anchored" data-anchor-id="application-of-remotely-sensed-data-to-the-city-in-nature-goal"><span class="header-section-number">4.2</span> Application of remotely sensed data to the <em>City in Nature</em> goal</h2>
 <p>I would propose the use of remote sensing methods to measure and track the intensity of nature in gardens and parks.</p>
 <p>Before I go into the details of how this can be done specifically in Singapore’s context, I will first do a literature review on current methodologies on urban vegetation.</p>
-<p>For this, I refer to Neyns and Canters’ <span class="citation" data-cites="neyns2022">(<a href="references.html#ref-neyns2022" role="doc-biblioref">2022</a>)</span> overview on current literature on urban vegetation in remote sensing. Scholars either define vegetation types based on functionality or taxonomic classes. Studies that analyse vegetation type by functionality tend to focus on the provision of ecosystem services., while classification by species in the urban environment tends to be more challenging due to noise.</p>
-<p>As for the type of sensor data, it is noted that high spatial resolution (which is desirable to ensure that the vegetation is larger than a pixel) usually comes with a tradeoff on spectral resolution (which is better for mapping results). As for spectral bands, Li et al <span class="citation" data-cites="li2015">(<a href="references.html#ref-li2015" role="doc-biblioref">2015</a>)</span>] found that the newly added red edge and NIR2 bands of Worldview 2 and 3 contribute more to the differentiation of tree species compared to the traditional four bands of Worldview 1 (red, green, blue, NIR). The mapping of individual trees becomes easier from a resolution of 3m or higher, and both spaceborne and airborne sensors can produce imagery at this resolution. Degerickx et al <span class="citation" data-cites="degerickx2020">(<a href="references.html#ref-degerickx2020" role="doc-biblioref">2020</a>)</span> also found that structural variables derived from LiDAR data was more useful than hyperspectral variables. Using multi-temporal data is also useful to assess the influence of the time of data acquisition as well as in the classification process. However, given the relative stability of Singapore’s weather throughout the year, this may not be as essential.</p>
-<p>As for feature definition, there are several types discussed such as spectral, textural, geometric, contextual and LIDAR-derived features. Spectral features use vegetation indices such as NDVI (which was covered in week 3), although NDVI in urban environments may lead to the possible false labelling of red clay roofs as vegetation <span class="citation" data-cites="zhang2010">(<a href="references.html#ref-zhang2010" role="doc-biblioref">Zhang, Feng and Jiang, 2010</a>)</span>. Geometric features describing the size, shape and edge complexity of objects can be useful in identifying broader functional vegetation types due to their widely different spatial properties (i.e.&nbsp;the space they occupy). Contextual features use neighbouring characteristics, and can be used for the mapping of functional vegetation types, such as Wen et al. <span class="citation" data-cites="wen2017">(<a href="references.html#ref-wen2017" role="doc-biblioref">2017</a>)</span> differentiating between road-side, park and residential trees by considering the relation between trees in a predefined area.</p>
-<p>Wang et al <span class="citation" data-cites="wang2019">(<a href="references.html#ref-wang2019" role="doc-biblioref">2019</a>)</span> concluded that fusion of spectral imagery with Light Detection And Ranging (LiDAR) data substantially improves the identification of tree species in a urban setting. Authors also deal with shadows in various ways such as omitting elements affected by shadow, or by performing shadow correction, or by including shadowed areas as separate classes.</p>
-<p>Referring to Ren et al’s <span class="citation" data-cites="ren2017">(<a href="references.html#ref-ren2017" role="doc-biblioref">2017</a>)</span> work, we see that using NDVI with Landsat TM data is also useful in rapdily estimating urban vegetation structural attributes such as leaf area index (LAI), crown closure (CC) and basal area (BA) at a spatiotemporal 30m resolution. NDVI applied to Sentinel-2 images, combined with plant height information (using Digital Object Height Models) is also another method of analysing he spatial distribution of well-equipped greenspace areas with high health and recreational potential as well as areas for improvement in poorly-equipped urban areas <span class="citation" data-cites="juergens2022">(<a href="references.html#ref-juergens2022" role="doc-biblioref">Juergens and Meyer-Heß, 2022</a>)</span>.</p>
-<p>Circling back to how Singapore can use remote sensing methods to plan and monitor greenspaces and vegetation intensity, I would propose using Landsat or Sentinel imagery with NDVI, combined with 3D datasets to analyse greenspaces and plan where improvements in greenspaces should occur based on Juergens and Meyer-Heß’s <span class="citation" data-cites="juergens2022">(<a href="references.html#ref-juergens2022" role="doc-biblioref">2022</a>)</span>methodology. Following which, I propose that remote sensing methods also be incorporated into a monitoring process, to measure the change in vegetation intensity and if planned improvements to urban vegetation are successful. Given that this measurement is not needed frequently (probably once a year), I would recommend that airborne sensors be used, so that data of high spatial and spectral resolution can be gathered, making the measurement of urban vegetation intensity more accurate. LiDAR data should also be included so that it can be combined with spectral imagery. This will allow Singapore to more easily quantify and measure the effectiveness of their efforts to intensify urban vegetation in its goal to become a <em>City in Nature</em>.</p>
+<p>For this, I refer to Neyns and Canters’ <span class="citation" data-cites="neyns2022">[-@neyns2022]</span> overview on current literature on urban vegetation in remote sensing. Scholars either define vegetation types based on functionality or taxonomic classes. Studies that analyse vegetation type by functionality tend to focus on the provision of ecosystem services., while classification by species in the urban environment tends to be more challenging due to noise.</p>
+<p>As for the type of sensor data, it is noted that high spatial resolution (which is desirable to ensure that the vegetation is larger than a pixel) usually comes with a tradeoff on spectral resolution (which is better for mapping results). As for spectral bands, Li et al <span class="citation" data-cites="li2015">[-@li2015]</span>] found that the newly added red edge and NIR2 bands of Worldview 2 and 3 contribute more to the differentiation of tree species compared to the traditional four bands of Worldview 1 (red, green, blue, NIR). The mapping of individual trees becomes easier from a resolution of 3m or higher, and both spaceborne and airborne sensors can produce imagery at this resolution. Degerickx et al <span class="citation" data-cites="degerickx2020">[-@degerickx2020]</span> also found that structural variables derived from LiDAR data was more useful than hyperspectral variables. Using multi-temporal data is also useful to assess the influence of the time of data acquisition as well as in the classification process. However, given the relative stability of Singapore’s weather throughout the year, this may not be as essential.</p>
+<p>As for feature definition, there are several types discussed such as spectral, textural, geometric, contextual and LIDAR-derived features. Spectral features use vegetation indices such as NDVI (which was covered in week 3), although NDVI in urban environments may lead to the possible false labelling of red clay roofs as vegetation <span class="citation" data-cites="zhang2010">[@zhang2010]</span>. Geometric features describing the size, shape and edge complexity of objects can be useful in identifying broader functional vegetation types due to their widely different spatial properties (i.e.&nbsp;the space they occupy). Contextual features use neighbouring characteristics, and can be used for the mapping of functional vegetation types, such as Wen et al. <span class="citation" data-cites="wen2017">[-@wen2017]</span> differentiating between road-side, park and residential trees by considering the relation between trees in a predefined area.</p>
+<p>Wang et al <span class="citation" data-cites="wang2019">[-@wang2019]</span> concluded that fusion of spectral imagery with Light Detection And Ranging (LiDAR) data substantially improves the identification of tree species in a urban setting. Authors also deal with shadows in various ways such as omitting elements affected by shadow, or by performing shadow correction, or by including shadowed areas as separate classes.</p>
+<p>Referring to Ren et al’s <span class="citation" data-cites="ren2017">[-@ren2017]</span> work, we see that using NDVI with Landsat TM data is also useful in rapdily estimating urban vegetation structural attributes such as leaf area index (LAI), crown closure (CC) and basal area (BA) at a spatiotemporal 30m resolution. NDVI applied to Sentinel-2 images, combined with plant height information (using Digital Object Height Models) is also another method of analysing he spatial distribution of well-equipped greenspace areas with high health and recreational potential as well as areas for improvement in poorly-equipped urban areas <span class="citation" data-cites="juergens2022">[@juergens2022]</span>.</p>
+<section id="proposal" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="proposal"><span class="header-section-number">4.2.1</span> Proposal</h3>
+<p>Circling back to how Singapore can use remote sensing methods to plan and monitor greenspaces and vegetation intensity, I would propose using Landsat or Sentinel imagery with NDVI, combined with 3D datasets to analyse greenspaces and plan where improvements in greenspaces should occur based on Juergens and Meyer-Heß’s <span class="citation" data-cites="juergens2022">[-@juergens2022]</span>methodology. Following which, I propose that remote sensing methods also be incorporated into a monitoring process, to measure the change in vegetation intensity and if planned improvements to urban vegetation are successful. Given that this measurement is not needed frequently (probably once a year), I would recommend that airborne sensors be used, so that data of high spatial and spectral resolution can be gathered, making the measurement of urban vegetation intensity more accurate. LiDAR data should also be included so that it can be combined with spectral imagery. This will allow Singapore to more easily quantify and measure the effectiveness of their efforts to intensify urban vegetation in its goal to become a <em>City in Nature</em>.</p>
 </section>
-<section id="reflection" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">4.3</span> Reflection</h2>
+</section>
+<section id="reflections" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="reflections"><span class="header-section-number">4.3</span> Reflections</h2>
 <p>Thinking about policy applications was helpful as it pushed me to consider the specific data sources and methodologies that could be used to achieve particular goals, and this was helpful as we could think through specific details rather than just “know” that remotely sensed data could be applied in different many ways. Obviously, there are more ways we can think about the practical applications of remotely sensed data in policy, but I enjoyed this start. While I now roughly understand the steps that can be taken to apply remote sensing methodologies in a policy context, I think the next step is to understand how I can actually do it practically, which I look forward to learning more about in the rest of the module.</p>
 
 
-<div id="refs" class="references csl-bib-body" role="doc-bibliography" style="display: none">
-<div id="ref-degerickx2020" class="csl-entry" role="doc-biblioentry">
-Degerickx, J., Hermy, M. and Somers, B. (2020) <span>“Mapping Functional Urban Green Types Using High Resolution Remote Sensing Data,”</span> <em>Sustainability</em>, 12(5), p. 2144. doi: <a href="https://doi.org/10.3390/su12052144">10.3390/su12052144</a>.
-</div>
-<div id="ref-juergens2022" class="csl-entry" role="doc-biblioentry">
-Juergens, C. and Meyer-Heß, M. F. (2022) <span>“Experimental Analysis of Geo-spatial Data to Evaluate Urban Greenspace: A Case Study in Dortmund, Germany,”</span> <em>KN - Journal of Cartography and Geographic Information</em>, 72(2), pp. 153–171. doi: <a href="https://doi.org/10.1007/s42489-022-00107-5">10.1007/s42489-022-00107-5</a>.
-</div>
-<div id="ref-li2015" class="csl-entry" role="doc-biblioentry">
-Li, D. <em>et al.</em> (2015) <span>“Object-Based Urban Tree Species Classification Using Bi-Temporal WorldView-2 and WorldView-3 Images,”</span> <em>Remote Sensing</em>, 7(12), pp. 16917–16937. doi: <a href="https://doi.org/10.3390/rs71215861">10.3390/rs71215861</a>.
-</div>
-<div id="ref-neyns2022" class="csl-entry" role="doc-biblioentry">
-Neyns, R. and Canters, F. (2022) <span>“Mapping of Urban Vegetation with High-Resolution Remote Sensing: A Review,”</span> <em>Remote Sensing</em>, 14(4), p. 1031. doi: <a href="https://doi.org/10.3390/rs14041031">10.3390/rs14041031</a>.
-</div>
-<div id="ref-ren2017" class="csl-entry" role="doc-biblioentry">
-Ren, Z. <em>et al.</em> (2017) <span>“Spatiotemporal analyses of urban vegetation structural attributes using multitemporal Landsat TM data and field measurements,”</span> <em>Annals of Forest Science</em>, 74(3), pp. 1–14. doi: <a href="https://doi.org/10.1007/s13595-017-0654-x">10.1007/s13595-017-0654-x</a>.
-</div>
-<div id="ref-wang2019" class="csl-entry" role="doc-biblioentry">
-Wang, K., Wang, T. and Liu, X. (2019) <span>“A Review: Individual Tree Species Classification Using Integrated Airborne LiDAR and Optical Imagery with a Focus on the Urban Environment,”</span> <em>Forests</em>, 10(1), p. 1. doi: <a href="https://doi.org/10.3390/f10010001">10.3390/f10010001</a>.
-</div>
-<div id="ref-wen2017" class="csl-entry" role="doc-biblioentry">
-Wen, D. <em>et al.</em> (2017) <span>“Semantic classification of urban trees using very high resolution satellite imagery,”</span> <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>, 10(4), pp. 1413–1424. doi: <a href="https://doi.org/10.1109/JSTARS.2016.2645798">10.1109/JSTARS.2016.2645798</a>.
-</div>
-<div id="ref-zhang2010" class="csl-entry" role="doc-biblioentry">
-Zhang, X., Feng, X. and Jiang, H. (2010) <span>“Object-oriented method for urban vegetation mapping using IKONOS imagery,”</span> <em>International Journal of Remote Sensing</em>, 31(1), pp. 177–196. doi: <a href="https://doi.org/10.1080/01431160902882603">10.1080/01431160902882603</a>.
-</div>
-</div>
 </section>
 
 </main> <!-- /main -->

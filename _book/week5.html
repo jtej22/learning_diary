@@ -191,12 +191,13 @@ div.csl-indent {
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="toc-section-number">5.1</span>  Learning Objectives</a></li>
   <li><a href="#summary-of-key-content" id="toc-summary-of-key-content" class="nav-link" data-scroll-target="#summary-of-key-content"><span class="toc-section-number">5.2</span>  Summary of Key Content</a>
   <ul class="collapse">
-  <li><a href="#background-of-google-earth-engine" id="toc-background-of-google-earth-engine" class="nav-link" data-scroll-target="#background-of-google-earth-engine"><span class="toc-section-number">5.2.1</span>  Background of Google Earth Engine</a></li>
-  <li><a href="#concept-of-client-vs-server-side" id="toc-concept-of-client-vs-server-side" class="nav-link" data-scroll-target="#concept-of-client-vs-server-side"><span class="toc-section-number">5.2.2</span>  Concept of Client vs Server side</a></li>
-  <li><a href="#scale-resolution" id="toc-scale-resolution" class="nav-link" data-scroll-target="#scale-resolution"><span class="toc-section-number">5.2.3</span>  Scale/ resolution</a></li>
-  <li><a href="#projections" id="toc-projections" class="nav-link" data-scroll-target="#projections"><span class="toc-section-number">5.2.4</span>  Projections</a></li>
+  <li><a href="#overview-of-content" id="toc-overview-of-content" class="nav-link" data-scroll-target="#overview-of-content"><span class="toc-section-number">5.2.1</span>  Overview of content:</a></li>
+  <li><a href="#background-of-google-earth-engine" id="toc-background-of-google-earth-engine" class="nav-link" data-scroll-target="#background-of-google-earth-engine"><span class="toc-section-number">5.2.2</span>  Background of Google Earth Engine</a></li>
+  <li><a href="#concept-of-client-vs-server-side" id="toc-concept-of-client-vs-server-side" class="nav-link" data-scroll-target="#concept-of-client-vs-server-side"><span class="toc-section-number">5.2.3</span>  Concept of Client vs Server side</a></li>
+  <li><a href="#scale-resolution" id="toc-scale-resolution" class="nav-link" data-scroll-target="#scale-resolution"><span class="toc-section-number">5.2.4</span>  Scale/ resolution</a></li>
+  <li><a href="#projections" id="toc-projections" class="nav-link" data-scroll-target="#projections"><span class="toc-section-number">5.2.5</span>  Projections</a></li>
   </ul></li>
-  <li><a href="#gee-in-action-summary-of-practical-content" id="toc-gee-in-action-summary-of-practical-content" class="nav-link" data-scroll-target="#gee-in-action-summary-of-practical-content"><span class="toc-section-number">5.3</span>  GEE in Action: Summary of Practical Content</a>
+  <li><a href="#summary-of-practical-content-gee-in-action" id="toc-summary-of-practical-content-gee-in-action" class="nav-link" data-scroll-target="#summary-of-practical-content-gee-in-action"><span class="toc-section-number">5.3</span>  Summary of Practical Content: GEE in Action</a>
   <ul class="collapse">
   <li><a href="#gee-data" id="toc-gee-data" class="nav-link" data-scroll-target="#gee-data"><span class="toc-section-number">5.3.1</span>  GEE Data</a></li>
   <li><a href="#scaling-factors" id="toc-scaling-factors" class="nav-link" data-scroll-target="#scaling-factors"><span class="toc-section-number">5.3.2</span>  Scaling factors</a></li>
@@ -236,26 +237,30 @@ div.csl-indent {
 </section>
 <section id="summary-of-key-content" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="summary-of-key-content"><span class="header-section-number">5.2</span> Summary of Key Content</h2>
-<section id="background-of-google-earth-engine" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="background-of-google-earth-engine"><span class="header-section-number">5.2.1</span> Background of Google Earth Engine</h3>
+<section id="overview-of-content" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="overview-of-content"><span class="header-section-number">5.2.1</span> Overview of content:</h3>
+<p>This week, we learnt more about Google Earth Engine (GEE), how it works with its Client and Server sides, and practicalities when using GEE such as scale/ resolution and projections.</p>
+</section>
+<section id="background-of-google-earth-engine" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="background-of-google-earth-engine"><span class="header-section-number">5.2.2</span> Background of Google Earth Engine</h3>
 <p>GEE is a geospatial processing service that allows geospatial analysis at scale (volume-wise). It takes code that users write and applies it to data on their servers. GEE has unique names for the types of data we use, “image” for what we know as raster data and “feature” for what we know as vectors. There is also ImageCollection and FeatureCollections, which are equivalents of raster stacks and (possibly?) geodatabases. GEE also uses Javascript, which will be interesting as I have no prior exposure to Javascript.</p>
 </section>
-<section id="concept-of-client-vs-server-side" class="level3" data-number="5.2.2">
-<h3 data-number="5.2.2" class="anchored" data-anchor-id="concept-of-client-vs-server-side"><span class="header-section-number">5.2.2</span> Concept of Client vs Server side</h3>
+<section id="concept-of-client-vs-server-side" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="concept-of-client-vs-server-side"><span class="header-section-number">5.2.3</span> Concept of Client vs Server side</h3>
 <p>We can upload our own data on GEE, and that is on client side. But the other GEE data is on server side. We refer to these Earth Engine Objects using “ee” in front of it, and they are not available locally.</p>
 <p>This implies that we shouldn’t loop on the server. Instead we create a function, and then apply it to what we want on the server. However, there are functions available on the server side too, and they are referred to with the “ee” in front too. Mapping is useful to be more computationally efficient when using GEE</p>
 </section>
-<section id="scale-resolution" class="level3" data-number="5.2.3">
-<h3 data-number="5.2.3" class="anchored" data-anchor-id="scale-resolution"><span class="header-section-number">5.2.3</span> Scale/ resolution</h3>
+<section id="scale-resolution" class="level3" data-number="5.2.4">
+<h3 data-number="5.2.4" class="anchored" data-anchor-id="scale-resolution"><span class="header-section-number">5.2.4</span> Scale/ resolution</h3>
 <p>Image scale in GEE refers to pixel resolution. When analysing in GEE, GEE aggregates the image to fit a 256x256 grid. We have to set the scale parameter we need otherwise GEE will resample using nearest neighbour. GEE is aggregating the values based on our analysis extent. We can Input the minimum and maximum for bands to control how the image is visualised as well.</p>
 </section>
-<section id="projections" class="level3" data-number="5.2.4">
-<h3 data-number="5.2.4" class="anchored" data-anchor-id="projections"><span class="header-section-number">5.2.4</span> Projections</h3>
+<section id="projections" class="level3" data-number="5.2.5">
+<h3 data-number="5.2.5" class="anchored" data-anchor-id="projections"><span class="header-section-number">5.2.5</span> Projections</h3>
 <p>GEE uses EPSG 3857 as the default projection, and we do not need to worry about it until the end when we are exporting.</p>
 </section>
 </section>
-<section id="gee-in-action-summary-of-practical-content" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="gee-in-action-summary-of-practical-content"><span class="header-section-number">5.3</span> GEE in Action: Summary of Practical Content</h2>
+<section id="summary-of-practical-content-gee-in-action" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="summary-of-practical-content-gee-in-action"><span class="header-section-number">5.3</span> Summary of Practical Content: GEE in Action</h2>
 <p>This week’s practical covers skills that we have covered before, but in GEE such as optimising the imagery used for analysis, mosaicking and clipping images, as well as texturing, PCA and indices. For this practical, I will be using New Delhi, which is the city Andy used in the practical, as I view this practical as more of a way to familiarise myself with GEE and future GEE practicals will be attempted with other cities.</p>
 <section id="gee-data" class="level3" data-number="5.3.1">
 <h3 data-number="5.3.1" class="anchored" data-anchor-id="gee-data"><span class="header-section-number">5.3.1</span> GEE Data</h3>

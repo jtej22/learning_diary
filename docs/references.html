@@ -49,22 +49,24 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./week5.html" rel="prev">
+<link href="./week8.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -82,10 +84,30 @@ div.csl-indent {
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Josiah’s Remote Sensing Learning Diary</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
       <h1 class="quarto-secondary-nav-title">References</h1>
@@ -96,14 +118,9 @@ div.csl-indent {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Josiah’s Remote Sensing Learning Diary</a> 
-    </div>
-      </div>
       <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -143,6 +160,21 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./week6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week 6: Classification 1</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week7.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week 7: Classification 2</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">week8</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link active">References</a>
   </div>
 </li>
@@ -172,145 +204,179 @@ div.csl-indent {
 
 </header>
 
-<div id="refs" class="references csl-bib-body" role="doc-bibliography">
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-boone2006" class="csl-entry" role="doc-biblioentry">
-Boone, R. B., Thirgood, S. J. and Hopcraft, J. G. C. (2006)
-<span>‘Serengeti wildebeest migratory patterns modeled from rainfall and
-new vegetation growth’</span>, <em>Ecology</em>, 87(8), pp. 1987–1994.
-Available at: <a href="https://www.jstor.org/stable/20069184">https://www.jstor.org/stable/20069184</a>.
+Boone, Randall B., Simon J. Thirgood, and J. Grant C. Hopcraft. 2006.
+<span>“Serengeti Wildebeest Migratory Patterns Modeled from Rainfall and
+New Vegetation Growth.”</span> <em>Ecology</em> 87 (8): 1987–94. <a href="https://www.jstor.org/stable/20069184">https://www.jstor.org/stable/20069184</a>.
 </div>
 <div id="ref-buiten1997" class="csl-entry" role="doc-biblioentry">
-Buiten, H. J. and Putten, B. van (1997) <span>‘Quality assessment of
-remote sensing image registration <span></span> analysis and testing of
-control point residuals’</span>, <em>ISPRS Journal of Photogrammetry and
-Remote Sensing</em>, 52(2), pp. 57–73. doi: <a href="https://doi.org/10.1016/S0924-2716(97)83001-8">10.1016/S0924-2716(97)83001-8</a>.
+Buiten, H. J., and B. van Putten. 1997. <span>“Quality Assessment of
+Remote Sensing Image Registration <span></span> Analysis and Testing of
+Control Point Residuals.”</span> <em>ISPRS Journal of Photogrammetry and
+Remote Sensing</em> 52 (2): 57–73. <a href="https://doi.org/10.1016/S0924-2716(97)83001-8">https://doi.org/10.1016/S0924-2716(97)83001-8</a>.
 </div>
 <div id="ref-corcione2021" class="csl-entry" role="doc-biblioentry">
-Corcione, V. <em>et al.</em> (2021) <span>‘A Sensitivity Analysis on the
-Spectral Signatures of Low-Backscattering Sea Areas in Sentinel-1 SAR
-Images’</span>, <em>Remote Sensing</em>, 13(6), p. 1183. doi: <a href="https://doi.org/10.3390/rs13061183">10.3390/rs13061183</a>.
+Corcione, Valeria, Andrea Buono, Ferdinando Nunziata, and Maurizio
+Migliaccio. 2021. <span>“A Sensitivity Analysis on the Spectral
+Signatures of Low-Backscattering Sea Areas in Sentinel-1 SAR
+Images.”</span> <em>Remote Sensing</em> 13 (6): 1183. <a href="https://doi.org/10.3390/rs13061183">https://doi.org/10.3390/rs13061183</a>.
 </div>
 <div id="ref-degerickx2020" class="csl-entry" role="doc-biblioentry">
-Degerickx, J., Hermy, M. and Somers, B. (2020) <span>‘Mapping Functional
-Urban Green Types Using High Resolution Remote Sensing Data’</span>,
-<em>Sustainability</em>, 12(5), p. 2144. doi: <a href="https://doi.org/10.3390/su12052144">10.3390/su12052144</a>.
+Degerickx, Jeroen, Martin Hermy, and Ben Somers. 2020. <span>“Mapping
+Functional Urban Green Types Using High Resolution Remote Sensing
+Data.”</span> <em>Sustainability</em> 12 (5): 2144. <a href="https://doi.org/10.3390/su12052144">https://doi.org/10.3390/su12052144</a>.
 </div>
 <div id="ref-faridatul2020" class="csl-entry" role="doc-biblioentry">
-Faridatul, M. I. and Ahmed, B. (2020) <span>‘Assessing Agricultural
-Vulnerability to Drought in a Heterogeneous Environment: A Remote
-Sensing-Based Approach’</span>, <em>Remote Sensing</em>, 12(20), p.
-3363. doi: <a href="https://doi.org/10.3390/rs12203363">10.3390/rs12203363</a>.
+Faridatul, Mst Ilme, and Bayes Ahmed. 2020. <span>“Assessing
+Agricultural Vulnerability to Drought in a Heterogeneous Environment: A
+Remote Sensing-Based Approach.”</span> <em>Remote Sensing</em> 12 (20):
+3363. <a href="https://doi.org/10.3390/rs12203363">https://doi.org/10.3390/rs12203363</a>.
 </div>
 <div id="ref-farwell2021" class="csl-entry" role="doc-biblioentry">
-Farwell, L. S. <em>et al.</em> (2021) <span>‘Satellite image texture
-captures vegetation heterogeneity and explains patterns of bird
-richness’</span>, <em>Remote Sensing of Environment</em>, 253, p.
-112175. doi: <a href="https://doi.org/10.1016/j.rse.2020.112175">10.1016/j.rse.2020.112175</a>.
+Farwell, Laura S., David Gudex-Cross, Ilianna E. Anise, Michael J.
+Bosch, Ashley M. Olah, Volker C. Radeloff, Elena Razenkova, et al. 2021.
+<span>“Satellite Image Texture Captures Vegetation Heterogeneity and
+Explains Patterns of Bird Richness.”</span> <em>Remote Sensing of
+Environment</em> 253 (February): 112175. <a href="https://doi.org/10.1016/j.rse.2020.112175">https://doi.org/10.1016/j.rse.2020.112175</a>.
 </div>
 <div id="ref-fensholt2012" class="csl-entry" role="doc-biblioentry">
-Fensholt, R. and Proud, S. R. (2012) <span>‘Evaluation of Earth
-Observation based global long term vegetation trends <span></span>
-Comparing GIMMS and MODIS global NDVI time series’</span>, <em>Remote
-Sensing of Environment</em>, 119, pp. 131–147. doi: <a href="https://doi.org/10.1016/j.rse.2011.12.015">10.1016/j.rse.2011.12.015</a>.
+Fensholt, Rasmus, and Simon R. Proud. 2012. <span>“Evaluation of Earth
+Observation Based Global Long Term Vegetation Trends <span></span>
+Comparing GIMMS and MODIS Global NDVI Time Series.”</span> <em>Remote
+Sensing of Environment</em> 119 (April): 131–47. <a href="https://doi.org/10.1016/j.rse.2011.12.015">https://doi.org/10.1016/j.rse.2011.12.015</a>.
 </div>
 <div id="ref-hall-beyer2017" class="csl-entry" role="doc-biblioentry">
-Hall-Beyer, M. (2017) <span>‘GLCM Texture: A Tutorial v. 3.0 March
-2017’</span>.
+Hall-Beyer, Mryka. 2017. <span>“GLCM Texture: A Tutorial v. 3.0 March
+2017.”</span>
 </div>
 <div id="ref-haralick1973" class="csl-entry" role="doc-biblioentry">
-Haralick, R. M., Shanmugam, K. and Dinstein, I. (1973) <span>‘Textural
-features for image classification’</span>, <em>IEEE Transactions on
-Systems, Man, and Cybernetics</em>, SMC-3(6), pp. 610–621. doi: <a href="https://doi.org/10.1109/TSMC.1973.4309314">10.1109/TSMC.1973.4309314</a>.
+Haralick, Robert M., K. Shanmugam, and Its’Hak Dinstein. 1973.
+<span>“Textural Features for Image Classification.”</span> <em>IEEE
+Transactions on Systems, Man, and Cybernetics</em> SMC-3 (6): 610–21. <a href="https://doi.org/10.1109/TSMC.1973.4309314">https://doi.org/10.1109/TSMC.1973.4309314</a>.
+</div>
+<div id="ref-herold2003" class="csl-entry" role="doc-biblioentry">
+Herold, M., M. E. Gardner, and D. A. Roberts. 2003. <span>“Spectral
+Resolution Requirements for Mapping Urban Areas.”</span> <em>IEEE
+Transactions on Geoscience and Remote Sensing</em> 41 (9): 1907–19. <a href="https://doi.org/10.1109/TGRS.2003.815238">https://doi.org/10.1109/TGRS.2003.815238</a>.
+</div>
+<div id="ref-huth2012" class="csl-entry" role="doc-biblioentry">
+Huth, Juliane, Claudia Kuenzer, Thilo Wehrmann, Steffen Gebhardt, Vo
+Quoc Tuan, and Stefan Dech. 2012. <span>“Land Cover and Land Use
+Classification with TWOPAC: Towards Automated Processing for Pixel- and
+Object-Based Image Classification.”</span> <em>Remote Sensing</em> 4
+(9): 2530–53. <a href="https://doi.org/10.3390/rs4092530">https://doi.org/10.3390/rs4092530</a>.
 </div>
 <div id="ref-jensen2015" class="csl-entry" role="doc-biblioentry">
-Jensen, J. R. (2015) <em>Introductory Digital Image Processing: A Remote
-Sensing Perspective</em>. Pearson Education, Incorporated.
+Jensen, John R. 2015. <em>Introductory Digital Image Processing: A
+Remote Sensing Perspective</em>. Pearson Education, Incorporated.
 </div>
 <div id="ref-juergens2022" class="csl-entry" role="doc-biblioentry">
-Juergens, C. and Meyer-Heß, M. F. (2022) <span>‘Experimental Analysis of
-Geo-spatial Data to Evaluate Urban Greenspace: A Case Study in Dortmund,
-Germany’</span>, <em>KN - Journal of Cartography and Geographic
-Information</em>, 72(2), pp. 153–171. doi: <a href="https://doi.org/10.1007/s42489-022-00107-5">10.1007/s42489-022-00107-5</a>.
+Juergens, Carsten, and M. Fabian Meyer-Heß. 2022. <span>“Experimental
+Analysis of Geo-Spatial Data to Evaluate Urban Greenspace: A Case Study
+in Dortmund, Germany.”</span> <em>KN - Journal of Cartography and
+Geographic Information</em> 72 (2): 153–71. <a href="https://doi.org/10.1007/s42489-022-00107-5">https://doi.org/10.1007/s42489-022-00107-5</a>.
 </div>
 <div id="ref-klonus2009" class="csl-entry" role="doc-biblioentry">
-Klonus, S. and Ehlers, M. (2009) <span>‘2009 12th international
-conference on information fusion’</span>, in, pp. 1409–1416.
+Klonus, Sascha, and Manfred Ehlers. 2009. <span>“2009 12th International
+Conference on Information Fusion.”</span> In, 1409–16.
 </div>
 <div id="ref-li2015" class="csl-entry" role="doc-biblioentry">
-Li, D. <em>et al.</em> (2015) <span>‘Object-Based Urban Tree Species
-Classification Using Bi-Temporal WorldView-2 and WorldView-3
-Images’</span>, <em>Remote Sensing</em>, 7(12), pp. 16917–16937. doi: <a href="https://doi.org/10.3390/rs71215861">10.3390/rs71215861</a>.
+Li, Dan, Yinghai Ke, Huili Gong, and Xiaojuan Li. 2015.
+<span>“Object-Based Urban Tree Species Classification Using Bi-Temporal
+WorldView-2 and WorldView-3 Images.”</span> <em>Remote Sensing</em> 7
+(12): 16917–37. <a href="https://doi.org/10.3390/rs71215861">https://doi.org/10.3390/rs71215861</a>.
+</div>
+<div id="ref-maclachlan2017" class="csl-entry" role="doc-biblioentry">
+MacLachlan, Andrew, Gareth Roberts, Eloise Biggs, and Bryan Boruff.
+2017. <span>“Subpixel Land-Cover Classification for Improved Urban Area
+Estimates Using Landsat.”</span> <em>International Journal of Remote
+Sensing</em> 38 (20): 5763–92. <a href="https://doi.org/10.1080/01431161.2017.1346403">https://doi.org/10.1080/01431161.2017.1346403</a>.
 </div>
 <div id="ref-neyns2022" class="csl-entry" role="doc-biblioentry">
-Neyns, R. and Canters, F. (2022) <span>‘Mapping of Urban Vegetation with
-High-Resolution Remote Sensing: A Review’</span>, <em>Remote
-Sensing</em>, 14(4), p. 1031. doi: <a href="https://doi.org/10.3390/rs14041031">10.3390/rs14041031</a>.
+Neyns, Robbe, and Frank Canters. 2022. <span>“Mapping of Urban
+Vegetation with High-Resolution Remote Sensing: A Review.”</span>
+<em>Remote Sensing</em> 14 (4): 1031. <a href="https://doi.org/10.3390/rs14041031">https://doi.org/10.3390/rs14041031</a>.
 </div>
 <div id="ref-novak1992" class="csl-entry" role="doc-biblioentry">
-Novak, K. (1992) <span>‘Rectification of Digital Imagery’</span>,
+Novak, Kurt. 1992. <span>“Rectification of Digital Imagery.”</span>
 <em>PHOTOGRAMMETRIC ENGINEERING</em>.
 </div>
+<div id="ref-phiri2017" class="csl-entry" role="doc-biblioentry">
+Phiri, Darius, and Justin Morgenroth. 2017. <span>“Developments in
+Landsat Land Cover Classification Methods: A Review.”</span> <em>Remote
+Sensing</em> 9 (9): 967. <a href="https://doi.org/10.3390/rs9090967">https://doi.org/10.3390/rs9090967</a>.
+</div>
 <div id="ref-pinto2017" class="csl-entry" role="doc-biblioentry">
-Pinto, D. G. <em>et al.</em> (2017) <span>‘Correlations between spectral
-and biophysical data obtained in canola canopy cultivated in the
-subtropical region of Brazil’</span>, <em>Pesquisa Agropecuária
-Brasileira</em>, 52(10), pp. 825–832. doi: <a href="https://doi.org/10.1590/s0100-204x2017001000001">10.1590/s0100-204x2017001000001</a>.
+Pinto, Daniele Gutterres, Denise Cybis Fontana, Genei Antonio Dalmago,
+Elizandro Fochesatto, Matheus Boni Vicari, Carolina Bremm, Gilberto
+Rocca da Cunha, Jorge Alberto de Gouvêa, and Anderson Santi. 2017.
+<span>“Correlations Between Spectral and Biophysical Data Obtained in
+Canola Canopy Cultivated in the Subtropical Region of Brazil.”</span>
+<em>Pesquisa Agropecuária Brasileira</em> 52 (10): 825–32. <a href="https://doi.org/10.1590/s0100-204x2017001000001">https://doi.org/10.1590/s0100-204x2017001000001</a>.
 </div>
 <div id="ref-pratt2013" class="csl-entry" role="doc-biblioentry">
-Pratt, W. (2013) <em>Introduction to Digital Image Processing</em>. Boca
-Raton: CRC Press. Available at: <a href="https://learning.oreilly.com/library/view/introduction-to-digital/9781482216691/">https://learning.oreilly.com/library/view/introduction-to-digital/9781482216691/</a>.
+Pratt, William. 2013. <em>Introduction to Digital Image Processing</em>.
+Boca Raton: CRC Press. <a href="https://learning.oreilly.com/library/view/introduction-to-digital/9781482216691/">https://learning.oreilly.com/library/view/introduction-to-digital/9781482216691/</a>.
 </div>
 <div id="ref-qi2022" class="csl-entry" role="doc-biblioentry">
-Qi, S. <em>et al.</em> (2022) <span>‘Bamboo Forest Mapping in China
-Using the Dense Landsat 8 Image Archive and Google Earth Engine’</span>,
-<em>Remote Sensing</em>, 14(3), p. 762. doi: <a href="https://doi.org/10.3390/rs14030762">10.3390/rs14030762</a>.
+Qi, Shuhua, Bin Song, Chong Liu, Peng Gong, Jin Luo, Meinan Zhang, and
+Tianwei Xiong. 2022. <span>“Bamboo Forest Mapping in China Using the
+Dense Landsat 8 Image Archive and Google Earth Engine.”</span>
+<em>Remote Sensing</em> 14 (3): 762. <a href="https://doi.org/10.3390/rs14030762">https://doi.org/10.3390/rs14030762</a>.
 </div>
 <div id="ref-ren2017" class="csl-entry" role="doc-biblioentry">
-Ren, Z. <em>et al.</em> (2017) <span>‘Spatiotemporal analyses of urban
-vegetation structural attributes using multitemporal Landsat TM data and
-field measurements’</span>, <em>Annals of Forest Science</em>, 74(3),
-pp. 1–14. doi: <a href="https://doi.org/10.1007/s13595-017-0654-x">10.1007/s13595-017-0654-x</a>.
+Ren, Zhibin, Ruiliang Pu, Haifeng Zheng, Dan Zhang, and Xingyuan He.
+2017. <span>“Spatiotemporal Analyses of Urban Vegetation Structural
+Attributes Using Multitemporal Landsat TM Data and Field
+Measurements.”</span> <em>Annals of Forest Science</em> 74 (3): 1–14. <a href="https://doi.org/10.1007/s13595-017-0654-x">https://doi.org/10.1007/s13595-017-0654-x</a>.
 </div>
 <div id="ref-shafizadeh-moghadam2021" class="csl-entry" role="doc-biblioentry">
-Shafizadeh-Moghadam, H. <em>et al.</em> (2021) <span>‘Google earth
-engine for large-scale land use and land cover mapping: An object-based
-classification approach using spectral, textural and topographical
-factors’</span>, <em>GIScience &amp; Remote Sensing</em>, 58(6), pp.
-914–928. doi: <a href="https://doi.org/10.1080/15481603.2021.1947623">10.1080/15481603.2021.1947623</a>.
+Shafizadeh-Moghadam, Hossein, Morteza Khazaei, Seyed Kazem Alavipanah,
+and Qihao Weng. 2021. <span>“Google Earth Engine for Large-Scale Land
+Use and Land Cover Mapping: An Object-Based Classification Approach
+Using Spectral, Textural and Topographical Factors.”</span>
+<em>GIScience &amp; Remote Sensing</em> 58 (6): 914–28. <a href="https://doi.org/10.1080/15481603.2021.1947623">https://doi.org/10.1080/15481603.2021.1947623</a>.
 </div>
 <div id="ref-tassi2020" class="csl-entry" role="doc-biblioentry">
-Tassi, A. and Vizzari, M. (2020) <span>‘Object-Oriented LULC
+Tassi, Andrea, and Marco Vizzari. 2020. <span>“Object-Oriented LULC
 Classification in Google Earth Engine Combining SNIC, GLCM, and Machine
-Learning Algorithms’</span>, <em>Remote Sensing</em>, 12(22), p. 3776.
-doi: <a href="https://doi.org/10.3390/rs12223776">10.3390/rs12223776</a>.
+Learning Algorithms.”</span> <em>Remote Sensing</em> 12 (22): 3776. <a href="https://doi.org/10.3390/rs12223776">https://doi.org/10.3390/rs12223776</a>.
 </div>
 <div id="ref-tucker2005" class="csl-entry" role="doc-biblioentry">
-Tucker, C. J. <em>et al.</em> (2005) <span>‘An extended AVHRR
-8<span>-</span>km NDVI dataset compatible with MODIS and SPOT vegetation
-NDVI data’</span>, <em>International Journal of Remote Sensing</em>,
-26(20), pp. 4485–4498. doi: <a href="https://doi.org/10.1080/01431160500168686">10.1080/01431160500168686</a>.
+Tucker, Compton J., Jorge E. Pinzon, Molly E. Brown, Daniel A. Slayback,
+Edwin W. Pak, Robert Mahoney, Eric F. Vermote, and Nazmi El Saleous.
+2005. <span>“An Extended AVHRR 8<span>-</span>Km NDVI Dataset Compatible
+with MODIS and SPOT Vegetation NDVI Data.”</span> <em>International
+Journal of Remote Sensing</em> 26 (20): 4485–98. <a href="https://doi.org/10.1080/01431160500168686">https://doi.org/10.1080/01431160500168686</a>.
+</div>
+<div id="ref-varshney2014" class="csl-entry" role="doc-biblioentry">
+Varshney, Avnish, and Edida Rajesh. 2014. <span>“A Comparative Study of
+Built-up Index Approaches for Automated Extraction of Built-up Regions
+From Remote Sensing Data.”</span> <em>Journal of the Indian Society of
+Remote Sensing</em> 42 (3): 659–63. <a href="https://doi.org/10.1007/s12524-013-0333-9">https://doi.org/10.1007/s12524-013-0333-9</a>.
 </div>
 <div id="ref-wang2019" class="csl-entry" role="doc-biblioentry">
-Wang, K., Wang, T. and Liu, X. (2019) <span>‘A Review: Individual Tree
-Species Classification Using Integrated Airborne LiDAR and Optical
-Imagery with a Focus on the Urban Environment’</span>, <em>Forests</em>,
-10(1), p. 1. doi: <a href="https://doi.org/10.3390/f10010001">10.3390/f10010001</a>.
+Wang, Kepu, Tiejun Wang, and Xuehua Liu. 2019. <span>“A Review:
+Individual Tree Species Classification Using Integrated Airborne LiDAR
+and Optical Imagery with a Focus on the Urban Environment.”</span>
+<em>Forests</em> 10 (1): 1. <a href="https://doi.org/10.3390/f10010001">https://doi.org/10.3390/f10010001</a>.
 </div>
 <div id="ref-wen2017" class="csl-entry" role="doc-biblioentry">
-Wen, D. <em>et al.</em> (2017) <span>‘Semantic classification of urban
-trees using very high resolution satellite imagery’</span>, <em>IEEE
-Journal of Selected Topics in Applied Earth Observations and Remote
-Sensing</em>, 10(4), pp. 1413–1424. doi: <a href="https://doi.org/10.1109/JSTARS.2016.2645798">10.1109/JSTARS.2016.2645798</a>.
+Wen, Dawei, Xin Huang, Hui Liu, Wenzhi Liao, and Liangpei Zhang. 2017.
+<span>“Semantic Classification of Urban Trees Using Very High Resolution
+Satellite Imagery.”</span> <em>IEEE Journal of Selected Topics in
+Applied Earth Observations and Remote Sensing</em> 10 (4): 1413–24. <a href="https://doi.org/10.1109/JSTARS.2016.2645798">https://doi.org/10.1109/JSTARS.2016.2645798</a>.
 </div>
 <div id="ref-wolberg1990" class="csl-entry" role="doc-biblioentry">
-Wolberg, G. (1990) <em>Digital image warping | wiley</em>. New York:
-John Wiley- IEEE Computer Society. Available at: <a href="https://www.wiley.com/en-us/Digital+Image+Warping-p-9780818689444">https://www.wiley.com/en-us/Digital+Image+Warping-p-9780818689444</a>.
+Wolberg, George. 1990. <em>Digital Image Warping | Wiley</em>. New York:
+John Wiley- IEEE Computer Society. <a href="https://www.wiley.com/en-us/Digital+Image+Warping-p-9780818689444">https://www.wiley.com/en-us/Digital+Image+Warping-p-9780818689444</a>.
 </div>
 <div id="ref-zhang2010" class="csl-entry" role="doc-biblioentry">
-Zhang, X., Feng, X. and Jiang, H. (2010) <span>‘Object-oriented method
-for urban vegetation mapping using IKONOS imagery’</span>,
-<em>International Journal of Remote Sensing</em>, 31(1), pp. 177–196.
-doi: <a href="https://doi.org/10.1080/01431160902882603">10.1080/01431160902882603</a>.
+Zhang, Xiuying, Xuezhi Feng, and Hong Jiang. 2010.
+<span>“Object-Oriented Method for Urban Vegetation Mapping Using IKONOS
+Imagery.”</span> <em>International Journal of Remote Sensing</em> 31
+(1): 177–96. <a href="https://doi.org/10.1080/01431160902882603">https://doi.org/10.1080/01431160902882603</a>.
 </div>
 </div>
 
@@ -337,6 +403,119 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } 
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -417,8 +596,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./week5.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Week 5: Google Earth Engine (GEE)</span></span>
+      <a href="./week8.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">week8</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
