@@ -92,8 +92,10 @@ so use spatial cross-validation ideally
 
 However, one challenge for landcover classification is that of urban areas. Identifying and delineating urban areas is still a challenge because of the difficulty of disentangling surface reflectance of pixels due to the varied types of surface materials and structures in urban areas [@herold2003; @varshney2014; @maclachlan2017]. Spatial resolution is thus an important factor for accurate monitoring of LULC change.
 
-Accurate estimation of urban areas is also important as it is also used in other applications such as climate models or investigating urban heat island effects. What I found interesting in Andy's article [-@maclachlan2017] is how remote sensing methods are still developing and improving. In his article, he compares the use of Support Vector Machine (SVM) spectral unmixing and the novel sub and hard pixel Import Vector Machine (IVM) classifier. It also covers VIS (week 7)
+Accurate estimation of urban areas is also important as it is also used in other applications such as climate models or investigating urban heat island effects. What I found interesting in Andy's article [-@maclachlan2017] is how remote sensing methods are still developing and improving. In his article, he compares the use of Support Vector Machine (SVM) spectral unmixing and the novel sub and hard pixel Import Vector Machine (IVM) classifier. It also covers VIS (which we see this week)
 
 challenges in urban areas (Zhou et al 2009)
 
-## Reflection
+Related to urban areas, urban slums are a challenging to detect using satellite imagery
+
+## Reflections

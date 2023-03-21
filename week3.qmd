@@ -15,7 +15,7 @@ editor: visual
 
 ## Summary of Key Concepts
 
-### Overview
+### Overview of content:
 
 In this lecture, we mainly looked at types of corrections that could be applied to remotely sensed data:
 
@@ -137,7 +137,7 @@ Steps:
 
 This is the translation and rotation alignment process by which 2 images of similar geometry and of same geographic area are positioned coincident to each other so that corresponding elements appear in the same place. This is used when it is not necessary to have each pixel assigned a unique x,y coordinate. A hybrid approach that uses both image-to-map rectification and image-to-image registration might be useful when detecting change between 2 or more dates of remotely sensed data.
 
-## Summary of Practical
+## Summary of Practical Content
 
 This practical covered basic correction concepts such as atmospheric correction, mosaicking and enhancements. For this practical, I decided to look at Landsat8 imagery of Serengeti National Park (SNP) in Tanzania. I will be summarising my takeaways from the mosaicking and ratio enhancement sections of the practical, as I found them to be particularly useful. I was also unable to perform the PCA section as it took too long for my computer.
 

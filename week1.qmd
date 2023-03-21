@@ -23,7 +23,11 @@ The learning objectives of both the lecture and practical are:
 
 -   Pull out and statistically compare spectral signatures
 
-## Summary of key concepts
+## Summary of Key Concepts
+
+### Overview of key content:
+
+This week's learning diary entry wll focus on the types of sensors and data resolutions available in remote sensing.
 
 ### Types of sensors
 
@@ -43,7 +47,7 @@ The 4 types of resolutions are:
 
 -   Radiometric: Differences in light or reflectance
 
-## Practical
+## Summary of Practical Content
 
 The practical gave me the opportunity to explore the differences between Sentinel and Landsat data, as well as go through the practical process of searching for and downloading the relevant datasets. While I am slightly clearer on the general process, I am still perplexed by the vast options available such as choosing platforms, product types, and what is the best practice for choosing relevant imagery for different purposes.
 
@@ -148,13 +152,15 @@ Comparing the two outputs, we firstly see that the Landsat plot only has 3 land-
 
 For both plots, there isn't much of a distinct spectral signature any of the landcover types, and there is a fair amount of overlap between the landcover types in each band. This means that the raster products used are not the most ideal for landcover classification and more image processing might be needed. It should also be noted that while the Landsat plot looks less differentiated, the mean values on the y-axis are of different scales from the y-axis values for the Sentinel plot.
 
-## Applications of Spectral Signatures
+## Applications of Key Concepts and Skills
+
+### Spectral Signatures
 
 An interesting application of spectral signatures in academic studies is the analysis of the effects of low-backscattering areas of anthropogenic and natural origin on the azimuth autocorrelation function (AACF) using VV-polarised SAR measurements [@corcione2021]. This is of great interest for the marine pollution community to better differentiate between natural low-backscattering or human pollution.
 
-## Reflection
+## Reflections
 
-### Reflection on data resolutions
+### Reflections on data resolutions
 
 Spatial and temporal resolution are concepts that are fairly straightforward to me, as I used to be a mapper with the Singapore Armed Forces, where both types of resolutions were practical considerations when we were digitising areas of interest as it affected how clearly we could observe features and when choosing image files to use.
 
@@ -171,5 +177,3 @@ We can also rely on landcovers classified by other researchers such as [Dynamic 
 ### Spectral Signatures
 
 Spectral signatures will be key in my remote sensing journey moving forward. Regarding resources for spectral signatures that might be useful in the future, there is the [USGS Spectral Library](https://www.usgs.gov/labs/spectroscopy-lab/science/spectral-library) where we can reference the spectral reflectance of various materials for identification purposes. There is also the [Awesome Spectral Indices list](https://github.com/awesome-spectral-indices/awesome-spectral-indices) which keeps track of classical and novel spectral indices for different Remote Sensing applications.
-
-## 

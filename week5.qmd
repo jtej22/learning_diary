@@ -13,6 +13,10 @@ editor: visual
 
 ## Summary of Key Content
 
+### Overview of content:
+
+This week, we learnt more about Google Earth Engine (GEE), how it works with its Client and Server sides, and practicalities when using GEE such as scale/ resolution and projections.
+
 ### Background of Google Earth Engine
 
 GEE is a geospatial processing service that allows geospatial analysis at scale (volume-wise). It takes code that users write and applies it to data on their servers. GEE has unique names for the types of data we use, "image" for what we know as raster data and "feature" for what we know as vectors. There is also ImageCollection and FeatureCollections, which are equivalents of raster stacks and (possibly?) geodatabases. GEE also uses Javascript, which will be interesting as I have no prior exposure to Javascript.
@@ -31,7 +35,7 @@ Image scale in GEE refers to pixel resolution. When analysing in GEE, GEE aggreg
 
 GEE uses EPSG 3857 as the default projection, and we do not need to worry about it until the end when we are exporting.
 
-## GEE in Action: Summary of Practical Content
+## Summary of Practical Content: GEE in Action
 
 This week's practical covers skills that we have covered before, but in GEE such as optimising the imagery used for analysis, mosaicking and clipping images, as well as texturing, PCA and indices. For this practical, I will be using New Delhi, which is the city Andy used in the practical, as I view this practical as more of a way to familiarise myself with GEE and future GEE practicals will be attempted with other cities.
 
