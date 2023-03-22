@@ -6,25 +6,37 @@ format: html
 editor: visual
 ---
 
-## Summary of Lecture Content
+## Learning Objectives
 
-### Landcover classification
+-   Advanced Classification Methods (sub-pixel and super pixel)
 
-Object-based image analysis (OBIA)
+-   Assessing accuracy (and accounting for spatial dependence)
 
--   Superpixels
+## Summary of Key Concepts
 
--   Simple Linear Iterative Clustering (SLIC) Algorithm for superpixel generation
+This week's lecture covered more classification methods and how to assess accuracy of classifers, as well as the importance of accounting for spatial dependence in classifiers. This learning diary will focus on the advanced classification methods covered, while briefly summarising the other content in point-form.
 
--   Considers shapes based on similarity/ difference
+### Landcover classification methods
 
--   Parameters: distance (closeness to centre) and homogeneity of colours
+#### Object-based image analysis (OBIA)
 
-Sub-pixel analysis/ sub pixel classification/ spectral mixture analysis/ linear spectral unmixing
+-   Superpixels: consider shapes (rather than cells) based on the homogeneity or heterogeneity of cells
 
--   estimate fractions that make up a pixel
+-   Simple Linear Iterative Clustering (SLIC) Algorithm is the most common method for superpixel generation
 
--   few endmembers that are spectrally pure
+-   Parameters: distance (closeness to centre of pixel) and homogeneity of colours
+
+-   Process:
+
+    -   Requires several iterations for tuning and improving accuracy
+
+    -   Values can change and borders can move.
+
+#### Sub-pixel analysis/ sub-pixel classification/ spectral mixture analysis/ linear spectral unmixing
+
+-   This method estimates the proportion/ fractions of landcover that make up a pixel
+
+-   This process is dependent on a few endmembers that are spectrally pure that can come from:
 
     -   Spectral library
 
@@ -34,43 +46,63 @@ Sub-pixel analysis/ sub pixel classification/ spectral mixture analysis/ linear 
 
     -   Sub pixel analysis matrices: GEE makes it unconstrained by default, but constrain by setting sum to 1
 
+    -   ![Scatterplot of two-dimensional spectral data illustrating the physical interpretation of a mixture model based on endmembers](img/w7_endmembers.png)
+
+    -   Source: [@plaza2002]
+
 -   Makes a map of fractions
 
--   Number of endmembers: Vegetation--Impervious Surface- Soil model
+-   Some considerations for this approach include:
 
--   Multiple endmember spectral analysis (MESMA)
+    -   Number of endmembers:
+
+        -   This could be simplified using the Vegetation--Impervious Surface- Soil model
+
+        -   ![VIS model of Ridd (1995)](img/w7_vis.png)
+
+        -   Source: [@phinn2002]
+
+        -   Or use Multiple Endmember Spectral Mixture Analysis (MESMA) [@fernández-garcía2021]
 
 ### Accuracy
 
--   PA Producer accuracy
+In remote sensing, there are 3 main types of accuracy we focus on [@barsi2018]
 
--   UA User Accuracy
+-   Producer accuracy (PA)
 
--   OA Overall Accuracy
+    -   $$
+        TP/ (TP + FN)
+        $$
 
--   Confusion matrix
+-   User Accuracy (UA)
 
--   Fuzzy matrix
+    -   $$
+        TP/ (TP + FP)
+        $$
 
--   Kappa
+-   Overall Accuracy (OA)
+
+    -   $$
+        (TP + TN) / (TP+FP+FN+TN)
+        $$
+
+These are represented in a binary confusion matrix illustrating True Postive, True Negative (model is correct) and False Positive, False Negative (model is incorrect).
 
 ### Beyond remote sensing and into machine learning
 
-Combine into F1 score (Both PA and UA)
+-   Combine into F1 score (Both PA and UA)
 
-F1 doesnt consider true negatives
+-   F1 doesnt consider true negatives
 
-but depends on threshold
+-   but this depends on threshold
 
-Receiver Operating Characteristic Curve
+-   **Receiver Operating Characteristic Curve**
 
-Calc area under curve
+    -   Calculate area under curve
 
-Cross-validation
+-   **Cross-validation**
 
-Spatial auto-correlation
-
-so use spatial cross-validation ideally
+-   **Spatial auto-correlation**: ideally use spatial cross-validation
 
 ### Spatial Cross-Validation
 
@@ -82,20 +114,62 @@ so use spatial cross-validation ideally
 
 -   **Support Vector Machine**
 
-    -   Lovelace: rather than using each fold to figure out C and gamma (overfits), take random sample from fold then get C and gamma.
+    -   Rather than using each fold to figure out C and gamma (overfits), take random sample from fold then get C and gamma [@lovelace2019].
 
     -   Not available in GEE yet but available in R
 
     -   GEE specific to satellite imagery, hard to do vector analysis and stuff
 
-## Application
+## Summary of Practical Content
 
-However, one challenge for landcover classification is that of urban areas. Identifying and delineating urban areas is still a challenge because of the difficulty of disentangling surface reflectance of pixels due to the varied types of surface materials and structures in urban areas [@herold2003; @varshney2014; @maclachlan2017]. Spatial resolution is thus an important factor for accurate monitoring of LULC change.
+For this week's practical, we looked at using sub-pixels and super-pixels for classification. For super-pixels, the main outline was to take a grid of points and get the pixels, then reduce the pixels to fewer objects and finally classify the objects.
 
-Accurate estimation of urban areas is also important as it is also used in other applications such as climate models or investigating urban heat island effects. What I found interesting in Andy's article [-@maclachlan2017] is how remote sensing methods are still developing and improving. In his article, he compares the use of Support Vector Machine (SVM) spectral unmixing and the novel sub and hard pixel Import Vector Machine (IVM) classifier. It also covers VIS (which we see this week)
+-   First we cluster the pixels:
 
-challenges in urban areas (Zhou et al 2009)
+    -   K-means clustering
 
-Related to urban areas, urban slums are a challenging to detect using satellite imagery
+        -   ee.Algorithms.Image.Segmentation.KMeans()
+
+    -   or Simple Non-Iterative Clustering (SNIC)
+
+        -   Clusters pixels using normalised spatial and colour distances
+
+        -   Make a seed grid first: ee.Algorithms.Image.Segmenttion.seedGrid()
+
+        -   To run SNIC: ee.Algorithms.Image.Segmentation.SNIC()
+
+-   Extract more information (e.g. NDVI) then create an image
+
+    -   ee.Image.cat()
+
+-   Then use a CART classifier for landcover classification
+
+    -   ee.Classifier.smileCart().train()
+
+For this practical, I used Ahmedabad, India, which is also the city me and my group used for our group presentation.
+
+::: {#w6_figs_1 layout-nrow="3"}
+![True Colour for Ahmedabad](img/w7_raw.png){#w7_raw}
+
+![Sub-pixel approach](img/w7_reclassified.png){#w7_reclassified}
+
+![Super-pixel approach](img/w7_finalclassified.png){#w7_fclassified}
+
+Landcover Classification for Ahmedabad
+:::
+
+My practical output gave very interesting results. My inputs were urban, grass, bare earth and forest areas, and there are only 3 typologies for the output. The pink areas are urban, grey bare earth and green seems to be a mix of forest and grass areas. Perhaps my input pixels were not distinct enough and human error resulted in this. For the super-pixel approach, it also seems to have not classified the river (black lines which are actually slivers when zoomed in, while the sub-pixel approach classified the river as grass/forest. If I were to repeat this, I would use endmembers from a spectral library rather than my own extracts. The superpixel output is more aesthetic compared to the sub-pixel at first glance too.
+
+## Application of Key Concepts and Skills
+
+However, one challenge for landcover classification is that of urban areas. Identifying and delineating urban areas is still a challenge because of the difficulty of disentangling surface reflectance of pixels due to the varied types of surface materials and structures in urban areas [@herold2003; @varshney2014; @maclachlan2017a]. Spatial resolution is thus an important factor for accurate monitoring of LULC change.
+
+Accurate estimation of urban areas is also important as it is also used in other applications such as climate models or investigating urban heat island effects. What I found interesting in Andy's article [-@maclachlan2017a] is how remote sensing methods are still developing and improving. In his article, he compares the use of Support Vector Machine (SVM) spectral unmixing and the novel sub and hard pixel Import Vector Machine (IVM) classifier. The IVM approach assess whether new samples (import vectors) can be removed in each forward step to provide a smoother decision boundary, and generates 2 outputs: a subpixel dataset that gives the probability of a pixel containing a given landcover type and a 'hardened' classified dataset. Andy argues that classified subpixel data alongside high spatial resolution imagery can refine estimates of urban areas, facilitating improved decision-making that maximises financial resources. Nonetheless, it is also important to be conscious of how spatial structure and composition of urban and suburban areas differ regionally, nationally and globally [@maclachlan2017a].
+
+As remote sensing researchers, we should remain up to date with the latest classifier methods and understand how they work so as to use satellite imagery most effectively.
 
 ## Reflections
+
+This week's content was quite technical, covering both advanced classifier methods and indicators for accuracy assessment (although I've learnt the concept of confusion matrix in accuracy assessment before in a module using machine learning). Nonetheless, it was exciting to try out landcover classification on GEE in the practical. While there was much room for improvement, I am excited to experiment with different methods in the future and understand how to optimally classify landcover.
+
+However, one slight concern I have is how technical remote sensing jargon can get in academic articles, but I think the only way is to slowly read more and be exposed to different methodologies.

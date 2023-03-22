@@ -1,11 +1,17 @@
 # Week 8: Temperature and Policy
 
 ---
-title: "week8"
+title: "Week 8: Temperature and Policy"
 editor: visual
 ---
 
-## Lecture Summary: Temperature and Policy
+## Learning Objectives
+
+-   Analysing temperature across urban areas
+
+    -   Along both spatial and time scales
+
+## Summary of Key Concepts
 
 ### Urban Heat Island
 
@@ -45,7 +51,9 @@ Other factors:
 
 -   COP26
 
-### **Beat the Heat Handbook Case Studies**
+### **Resources**
+
+#### Beat the Heat Handbook Case Studies
 
 **Superblocks**
 
@@ -55,13 +63,17 @@ Other factors:
 
 **Chicago 1995 Heatwave**
 
-### Metropolitan UHI Reduction Strategies
+#### Metropolitan UHI Reduction Strategies
 
 **London Plan**
 
 **Singapore Master Plan**
 
-## Lecture and Practical Summary: Extracting Temperature from Satellite Data
+-   While the document..
+
+## Summary of Practical Content
+
+This week's practical focuses on extracting temperature data from satellite data, and creating outputs that analyse it in spatial and time scales.
 
 ### Methodology to extract temperature per spatial unit
 
@@ -79,7 +91,7 @@ Other factors:
 
 ### Mean Radiant Temperature
 
-## Applications
+## Application of Key Concepts and Skills
 
 ## Reflections
 

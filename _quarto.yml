@@ -22,6 +22,7 @@ book:
     - week6.qmd
     - week7.qmd
     - week8.qmd
+    - summary.qmd
     - references.qmd
   favicon: "img/favicon.ico"
 
