@@ -1,4 +1,12 @@
+# Module Summary
+
 ---
 title: "Module Summary"
 editor: visual
 ---
+
+This module on remote sensing has been very valuable in my growth as a spatial geospatial analyst. While I was familiar with vector data and its methods, I did not know much about raster data and its methods before taking this module. The most I knew about raster data was some pre-processing methods such as mosaicking and orthorectification, based on knowledge I learnt during my military days and even then it was not used much too.
+
+After this module, I am grateful for the methods taught, on how to use SNAP and GEE and other skills, so as to use raster data for effective analysis. The learning curve felt very deep at times, but the guidance given in this module has made this learning process a lot more bearable. I am also more confident of my abilities in using remotely-sensed data, but I am also aware of how vast the remote sensing domain is and how much I can learn in this area. I hope I can be continually exposed to best practices in remote sensing and learning how I can use it better. But even if I am unable to do so in the future due to time constraints or just not using it in my job, I think this learning diary and [Andy's CASA0023 website](https://andrewmaclachlan.github.io/CASA0023/) was helpful in condensing what I learnt and can help in jogging my memory in the future too. I am glad that I took this module and hope future CASA students also have that opportunity.
+
+For this module, I also worked on a group presentation with Atsumi, Eunyoung, Yi-Chien and Yifei. In the coursework scenario, we were applying to help a city improve compliance of their metropolitan development plans in adhering to and achieving compliance with global development goals / frameworks / agendas (e.g. New Urban Agenda, Sustainable Development Goals or the Sendai Framework for disaster risk reduction), within a budget of £500,000. We focused on Ahmedabad, India, and how they could incorporate remotely sensed data into local plans for *heatwave monitoring and forecasting for slum populations* so as to identify high-risk areas and people groups for intervention resources to be directed to. The presentation slides can be found [here](https://jtej22.github.io/casa0075/index.html#1) and the Github repo for the slides can be found [here](https://github.com/jtej22/casa0075). Thank you for reading my remote sensing learning diary!
