@@ -51,6 +51,7 @@ div.csl-indent {
 <meta name="quarto:offset" content="./">
 <link href="./week4.html" rel="next">
 <link href="./week2.html" rel="prev">
+<link href="./img/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -172,7 +173,12 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">week8</span></a>
+  <a href="./week8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 8: Temperature and Policy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Module Summary</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -193,7 +199,7 @@ div.csl-indent {
   <li><a href="#summary-of-key-concepts" id="toc-summary-of-key-concepts" class="nav-link" data-scroll-target="#summary-of-key-concepts"><span class="toc-section-number">3.2</span>  Summary of Key Concepts</a>
   <ul class="collapse">
   <li><a href="#overview-of-content" id="toc-overview-of-content" class="nav-link" data-scroll-target="#overview-of-content"><span class="toc-section-number">3.2.1</span>  Overview of content:</a></li>
-  <li><a href="#geometric-corrections-and-mosaicking-jensen2015" id="toc-geometric-corrections-and-mosaicking-jensen2015" class="nav-link" data-scroll-target="#geometric-corrections-and-mosaicking-jensen2015"><span class="toc-section-number">3.2.2</span>  Geometric Corrections and Mosaicking <span class="citation" data-cites="jensen2015">(Jensen, 2015)</span></a></li>
+  <li><a href="#geometric-corrections-and-mosaicking-jensen2015" id="toc-geometric-corrections-and-mosaicking-jensen2015" class="nav-link" data-scroll-target="#geometric-corrections-and-mosaicking-jensen2015"><span class="toc-section-number">3.2.2</span>  Geometric Corrections and Mosaicking <span class="citation" data-cites="jensen2015">(Jensen 2015)</span></a></li>
   </ul></li>
   <li><a href="#summary-of-practical-content" id="toc-summary-of-practical-content" class="nav-link" data-scroll-target="#summary-of-practical-content"><span class="toc-section-number">3.3</span>  Summary of Practical Content</a>
   <ul class="collapse">
@@ -241,7 +247,7 @@ div.csl-indent {
 <li>Geometric
 <ul>
 <li><p>Use Ground Control Points (GCPs) to match points in the new image to a reference dataset.</p></li>
-<li><p>Ideally done with backward mapping (output to input) so that we can get a value in the original input image for every value in the gold standard <span class="citation" data-cites="jensen2015">(<a href="references.html#ref-jensen2015" role="doc-biblioref">Jensen, 2015, p. 247</a>)</span>.</p></li>
+<li><p>Ideally done with backward mapping (output to input) so that we can get a value in the original input image for every value in the gold standard <span class="citation" data-cites="jensen2015">(<a href="references.html#ref-jensen2015" role="doc-biblioref">Jensen 2015, 247</a>)</span>.</p></li>
 <li><p>And resample the final raster</p></li>
 </ul></li>
 <li>Atmospheric
@@ -253,7 +259,7 @@ div.csl-indent {
 <ul>
 <li><p>Removing distortions such that the pixels viewed at nadir (straight down)</p></li>
 <li><p>Requires sensor geometry and DEM.</p></li>
-<li><p>Cosine correction can be used <span class="citation" data-cites="jensen2015">(<a href="references.html#ref-jensen2015" role="doc-biblioref">Jensen, 2015</a>)</span></p></li>
+<li><p>Cosine correction can be used <span class="citation" data-cites="jensen2015">(<a href="references.html#ref-jensen2015" role="doc-biblioref">Jensen 2015</a>)</span></p></li>
 </ul></li>
 <li>Radiometric
 <ul>
@@ -275,7 +281,7 @@ div.csl-indent {
 </ul>
 </section>
 <section id="geometric-corrections-and-mosaicking-jensen2015" class="level3" data-number="3.2.2">
-<h3 data-number="3.2.2" class="anchored" data-anchor-id="geometric-corrections-and-mosaicking-jensen2015"><span class="header-section-number">3.2.2</span> Geometric Corrections and Mosaicking <span class="citation" data-cites="jensen2015">(<a href="references.html#ref-jensen2015" role="doc-biblioref">Jensen, 2015</a>)</span></h3>
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="geometric-corrections-and-mosaicking-jensen2015"><span class="header-section-number">3.2.2</span> Geometric Corrections and Mosaicking <span class="citation" data-cites="jensen2015">(<a href="references.html#ref-jensen2015" role="doc-biblioref">Jensen 2015</a>)</span></h3>
 <p>For this week’s learning diary, I will be focusing on types of geometric corrections and the mosaicking process, based on Jensen’s textbook <span class="citation" data-cites="jensen2015">(<a href="references.html#ref-jensen2015" role="doc-biblioref">2015</a>)</span>.</p>
 <p><strong>Ground Control Points</strong> are locations on the road surface that can be easily and accurately identified on a map. Each GCP should have 2 distinct sets of coordinates, image and map coordinates.</p>
 <p><strong>Image-to-map rectification</strong></p>
@@ -286,7 +292,7 @@ div.csl-indent {
 <ul>
 <li><p>Unsystematic errors in the new image produced by changes in attitude (roll, pitch and yaw) or altitude</p></li>
 <li><p>A first-order, six-parameter, linear transformation is sufficient to rectify the imagery to a geographic frame of reference.</p></li>
-<li><p>This type of transformation can model 6 kinds of distortions <span class="citation" data-cites="novak1992 buiten1997">(<a href="references.html#ref-novak1992" role="doc-biblioref">Novak, 1992</a>; <a href="references.html#ref-buiten1997" role="doc-biblioref">Buiten and Putten, 1997</a>)</span></p>
+<li><p>This type of transformation can model 6 kinds of distortions <span class="citation" data-cites="novak1992 buiten1997">(<a href="references.html#ref-novak1992" role="doc-biblioref">Novak 1992</a>; <a href="references.html#ref-buiten1997" role="doc-biblioref">Buiten and Putten 1997</a>)</span></p>
 <ul>
 <li><p>Translation in x and y</p></li>
 <li><p>Scale changes in x and y</p></li>
@@ -302,7 +308,7 @@ x = a_0 + a_1 x' + a_2 y'
 y = b_0 + b_1 x' + b_2 y'
 \]</span></p></li>
 <li><p>This forward mapping logic is useful when we rectify the location of discrete coordinates along a linear feature. However, when we are filling a rectified output grid with values from an unrectified input image, forward mapping logic is not very useful as the output location may not fall exactly on a x,y output map coordinate.</p></li>
-<li><p>This can result in output matrix pixels with no output values <span class="citation" data-cites="wolberg1990">(<a href="references.html#ref-wolberg1990" role="doc-biblioref">Wolberg, 1990</a>)</span></p></li>
+<li><p>This can result in output matrix pixels with no output values <span class="citation" data-cites="wolberg1990">(<a href="references.html#ref-wolberg1990" role="doc-biblioref">Wolberg 1990</a>)</span></p></li>
 </ul></li>
 <li><p>Inverse Mapping (output-to-input)</p>
 <ul>
@@ -427,12 +433,12 @@ NDVI =  \frac{NIR - Red}{NIR + Red}
 </div>
 </div>
 <p><strong>Data fusion</strong> is the process of appending new raster data to existing datasets or creating new raster datasets with different bands, and data fusion can be done with newly-created texture measures and the original data. Fusion can be done in R using the <code>stack()</code> function.</p>
-<p>When merging datasets obtained from different remote sensors, all datasets should be accurately registered to one another and resampled to the same pixel size. One component-substitution method available is Principle Component Analysis (PCA). At this stage I would have done Principal Component Analysis to scale the raster datasets, but unfortunately I was unable to complete the PCA part of the practical. PCA allows comparison of data that is not easily comparable in its raw form. Performing PCA would transform the original data to produce uncorrelated principal component images <span class="citation" data-cites="pratt2013">(<a href="references.html#ref-pratt2013" role="doc-biblioref">Pratt, 2013</a>)</span>. An advantage of PCA-based pan-sharpening is that the number of bands is not restricted <span class="citation" data-cites="klonus2009">(<a href="references.html#ref-klonus2009" role="doc-biblioref">Klonus and Ehlers, 2009</a>)</span></p>
+<p>When merging datasets obtained from different remote sensors, all datasets should be accurately registered to one another and resampled to the same pixel size. One component-substitution method available is Principle Component Analysis (PCA). At this stage I would have done Principal Component Analysis to scale the raster datasets, but unfortunately I was unable to complete the PCA part of the practical. PCA allows comparison of data that is not easily comparable in its raw form. Performing PCA would transform the original data to produce uncorrelated principal component images <span class="citation" data-cites="pratt2013">(<a href="references.html#ref-pratt2013" role="doc-biblioref">Pratt 2013</a>)</span>. An advantage of PCA-based pan-sharpening is that the number of bands is not restricted <span class="citation" data-cites="klonus2009">(<a href="references.html#ref-klonus2009" role="doc-biblioref">Klonus and Ehlers 2009</a>)</span></p>
 </section>
 </section>
 <section id="applications-of-ratio-enhancements" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="applications-of-ratio-enhancements"><span class="header-section-number">3.4</span> Applications of Ratio Enhancements</h2>
-<p>The normalised difference vegetation index (NDVI) is widely used for vegetation studies, with the NASA Global Inventory, Monitoring and Modelling Studies (GIMMS) global coverage dataset <span class="citation" data-cites="tucker2005">(<a href="references.html#ref-tucker2005" role="doc-biblioref">Tucker <em>et al.</em>, 2005</a>)</span> being the most widely used AVHRR (Advanced Very High Resolution Radiometer) dataset. They form a relatively robust basis for detecting long-term trends in NDVI in most of the world’s semi-arid, dry sub-humid and sub-humid areas <span class="citation" data-cites="fensholt2012">(<a href="references.html#ref-fensholt2012" role="doc-biblioref">Fensholt and Proud, 2012</a>)</span>.</p>
+<p>The normalised difference vegetation index (NDVI) is widely used for vegetation studies, with the NASA Global Inventory, Monitoring and Modelling Studies (GIMMS) global coverage dataset <span class="citation" data-cites="tucker2005">(<a href="references.html#ref-tucker2005" role="doc-biblioref">Tucker et al. 2005</a>)</span> being the most widely used AVHRR (Advanced Very High Resolution Radiometer) dataset. They form a relatively robust basis for detecting long-term trends in NDVI in most of the world’s semi-arid, dry sub-humid and sub-humid areas <span class="citation" data-cites="fensholt2012">(<a href="references.html#ref-fensholt2012" role="doc-biblioref">Fensholt and Proud 2012</a>)</span>.</p>
 <p>NDVI values can be used to determine and analyse drought-prone areas, such as Faridatul and Ahmed’s <span class="citation" data-cites="faridatul2020">(<a href="references.html#ref-faridatul2020" role="doc-biblioref">2020</a>)</span> work incorporating NDVI values into a modified vegetation condition index (mVCI) which enhances the detection of agricultural drought in the study area of Bangladesh; or can be used to analyse crop yields based on Pinto et al.’s <span class="citation" data-cites="pinto2017">(<a href="references.html#ref-pinto2017" role="doc-biblioref">2017</a>)</span> work on canola yields in Brazil.</p>
 <p>Focusing on Serengeti National Park, I thought it would be useful to use NDVI on satellite imagery of SNP for potential applications of monitoring anthropogenic impacts on the Protected Area or impacts of climate change on the ecosystem. For example, Boone et al <span class="citation" data-cites="boone2006">(<a href="references.html#ref-boone2006" role="doc-biblioref">2006</a>)</span> use rainfall and vegetation data (and NDVI) to model Serengeti wildebeest migratory patterns. However, Anderson et al <span class="citation" data-cites="anderson">(<a href="references.html#ref-anderson" role="doc-biblioref"><strong>anderson?</strong></a>)</span> also make the point that we should be cautious when using NDVI to study wildlife hotspots as NDVI can represent the effects of multiple, correlated processes (e.g.&nbsp;biomass, forage quality, cover for predators etc.) that influence the presence of hotspots (e.g.&nbsp;herbivore hotspots).</p>
 </section>
@@ -442,39 +448,39 @@ NDVI =  \frac{NIR - Red}{NIR + Red}
 <p>Mosaicking is a useful process given the limitations of some remote sensing products regarding geographical extents, and might come in handy in future research. Nonetheless, Andy also mentioned how this process may not be as important today as it is incorporated in the Google Earth Engine (GEE) workflow, so I am excited to learn in future weeks how this process is done in GEE. Mosaicking is also a bit of a throwback personally, back to 2017-18 for me when I learnt how to orthorectify and mosaic in ERDAS Imagine software (which I realised I have forgotten most of by now) and I am excited to learn how the process has evolved today when we start using GEE.</p>
 
 
-<div id="refs" class="references csl-bib-body" role="doc-bibliography" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
 <div id="ref-boone2006" class="csl-entry" role="doc-biblioentry">
-Boone, R. B., Thirgood, S. J. and Hopcraft, J. G. C. (2006) <span>“Serengeti wildebeest migratory patterns modeled from rainfall and new vegetation growth,”</span> <em>Ecology</em>, 87(8), pp. 1987–1994. Available at: <a href="https://www.jstor.org/stable/20069184">https://www.jstor.org/stable/20069184</a>.
+Boone, Randall B., Simon J. Thirgood, and J. Grant C. Hopcraft. 2006. <span>“Serengeti Wildebeest Migratory Patterns Modeled from Rainfall and New Vegetation Growth.”</span> <em>Ecology</em> 87 (8): 1987–94. <a href="https://www.jstor.org/stable/20069184">https://www.jstor.org/stable/20069184</a>.
 </div>
 <div id="ref-buiten1997" class="csl-entry" role="doc-biblioentry">
-Buiten, H. J. and Putten, B. van (1997) <span>“Quality assessment of remote sensing image registration <span></span> analysis and testing of control point residuals,”</span> <em>ISPRS Journal of Photogrammetry and Remote Sensing</em>, 52(2), pp. 57–73. doi: <a href="https://doi.org/10.1016/S0924-2716(97)83001-8">10.1016/S0924-2716(97)83001-8</a>.
+Buiten, H. J., and B. van Putten. 1997. <span>“Quality Assessment of Remote Sensing Image Registration <span></span> Analysis and Testing of Control Point Residuals.”</span> <em>ISPRS Journal of Photogrammetry and Remote Sensing</em> 52 (2): 57–73. <a href="https://doi.org/10.1016/S0924-2716(97)83001-8">https://doi.org/10.1016/S0924-2716(97)83001-8</a>.
 </div>
 <div id="ref-faridatul2020" class="csl-entry" role="doc-biblioentry">
-Faridatul, M. I. and Ahmed, B. (2020) <span>“Assessing Agricultural Vulnerability to Drought in a Heterogeneous Environment: A Remote Sensing-Based Approach,”</span> <em>Remote Sensing</em>, 12(20), p. 3363. doi: <a href="https://doi.org/10.3390/rs12203363">10.3390/rs12203363</a>.
+Faridatul, Mst Ilme, and Bayes Ahmed. 2020. <span>“Assessing Agricultural Vulnerability to Drought in a Heterogeneous Environment: A Remote Sensing-Based Approach.”</span> <em>Remote Sensing</em> 12 (20): 3363. <a href="https://doi.org/10.3390/rs12203363">https://doi.org/10.3390/rs12203363</a>.
 </div>
 <div id="ref-fensholt2012" class="csl-entry" role="doc-biblioentry">
-Fensholt, R. and Proud, S. R. (2012) <span>“Evaluation of Earth Observation based global long term vegetation trends <span></span> Comparing GIMMS and MODIS global NDVI time series,”</span> <em>Remote Sensing of Environment</em>, 119, pp. 131–147. doi: <a href="https://doi.org/10.1016/j.rse.2011.12.015">10.1016/j.rse.2011.12.015</a>.
+Fensholt, Rasmus, and Simon R. Proud. 2012. <span>“Evaluation of Earth Observation Based Global Long Term Vegetation Trends <span></span> Comparing GIMMS and MODIS Global NDVI Time Series.”</span> <em>Remote Sensing of Environment</em> 119 (April): 131–47. <a href="https://doi.org/10.1016/j.rse.2011.12.015">https://doi.org/10.1016/j.rse.2011.12.015</a>.
 </div>
 <div id="ref-jensen2015" class="csl-entry" role="doc-biblioentry">
-Jensen, J. R. (2015) <em>Introductory Digital Image Processing: A Remote Sensing Perspective</em>. Pearson Education, Incorporated.
+Jensen, John R. 2015. <em>Introductory Digital Image Processing: A Remote Sensing Perspective</em>. Pearson Education, Incorporated.
 </div>
 <div id="ref-klonus2009" class="csl-entry" role="doc-biblioentry">
-Klonus, S. and Ehlers, M. (2009) <span>“2009 12th international conference on information fusion,”</span> in, pp. 1409–1416.
+Klonus, Sascha, and Manfred Ehlers. 2009. <span>“2009 12th International Conference on Information Fusion.”</span> In, 1409–16.
 </div>
 <div id="ref-novak1992" class="csl-entry" role="doc-biblioentry">
-Novak, K. (1992) <span>“Rectification of Digital Imagery,”</span> <em>PHOTOGRAMMETRIC ENGINEERING</em>.
+Novak, Kurt. 1992. <span>“Rectification of Digital Imagery.”</span> <em>PHOTOGRAMMETRIC ENGINEERING</em>.
 </div>
 <div id="ref-pinto2017" class="csl-entry" role="doc-biblioentry">
-Pinto, D. G. <em>et al.</em> (2017) <span>“Correlations between spectral and biophysical data obtained in canola canopy cultivated in the subtropical region of Brazil,”</span> <em>Pesquisa Agropecuária Brasileira</em>, 52(10), pp. 825–832. doi: <a href="https://doi.org/10.1590/s0100-204x2017001000001">10.1590/s0100-204x2017001000001</a>.
+Pinto, Daniele Gutterres, Denise Cybis Fontana, Genei Antonio Dalmago, Elizandro Fochesatto, Matheus Boni Vicari, Carolina Bremm, Gilberto Rocca da Cunha, Jorge Alberto de Gouvêa, and Anderson Santi. 2017. <span>“Correlations Between Spectral and Biophysical Data Obtained in Canola Canopy Cultivated in the Subtropical Region of Brazil.”</span> <em>Pesquisa Agropecuária Brasileira</em> 52 (10): 825–32. <a href="https://doi.org/10.1590/s0100-204x2017001000001">https://doi.org/10.1590/s0100-204x2017001000001</a>.
 </div>
 <div id="ref-pratt2013" class="csl-entry" role="doc-biblioentry">
-Pratt, W. (2013) <em>Introduction to Digital Image Processing</em>. Boca Raton: CRC Press. Available at: <a href="https://learning.oreilly.com/library/view/introduction-to-digital/9781482216691/">https://learning.oreilly.com/library/view/introduction-to-digital/9781482216691/</a>.
+Pratt, William. 2013. <em>Introduction to Digital Image Processing</em>. Boca Raton: CRC Press. <a href="https://learning.oreilly.com/library/view/introduction-to-digital/9781482216691/">https://learning.oreilly.com/library/view/introduction-to-digital/9781482216691/</a>.
 </div>
 <div id="ref-tucker2005" class="csl-entry" role="doc-biblioentry">
-Tucker, C. J. <em>et al.</em> (2005) <span>“An extended AVHRR 8<span>-</span>km NDVI dataset compatible with MODIS and SPOT vegetation NDVI data,”</span> <em>International Journal of Remote Sensing</em>, 26(20), pp. 4485–4498. doi: <a href="https://doi.org/10.1080/01431160500168686">10.1080/01431160500168686</a>.
+Tucker, Compton J., Jorge E. Pinzon, Molly E. Brown, Daniel A. Slayback, Edwin W. Pak, Robert Mahoney, Eric F. Vermote, and Nazmi El Saleous. 2005. <span>“An Extended AVHRR 8<span>-</span>Km NDVI Dataset Compatible with MODIS and SPOT Vegetation NDVI Data.”</span> <em>International Journal of Remote Sensing</em> 26 (20): 4485–98. <a href="https://doi.org/10.1080/01431160500168686">https://doi.org/10.1080/01431160500168686</a>.
 </div>
 <div id="ref-wolberg1990" class="csl-entry" role="doc-biblioentry">
-Wolberg, G. (1990) <em>Digital image warping | wiley</em>. New York: John Wiley- IEEE Computer Society. Available at: <a href="https://www.wiley.com/en-us/Digital+Image+Warping-p-9780818689444">https://www.wiley.com/en-us/Digital+Image+Warping-p-9780818689444</a>.
+Wolberg, George. 1990. <em>Digital Image Warping | Wiley</em>. New York: John Wiley- IEEE Computer Society. <a href="https://www.wiley.com/en-us/Digital+Image+Warping-p-9780818689444">https://www.wiley.com/en-us/Digital+Image+Warping-p-9780818689444</a>.
 </div>
 </div>
 </section>

@@ -51,6 +51,7 @@ div.csl-indent {
 <meta name="quarto:offset" content="./">
 <link href="./week6.html" rel="next">
 <link href="./week4.html" rel="prev">
+<link href="./img/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -171,7 +172,12 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">week8</span></a>
+  <a href="./week8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 8: Temperature and Policy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Module Summary</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -293,7 +299,7 @@ div.csl-indent {
 </section>
 <section id="texturing" class="level3" data-number="5.3.3">
 <h3 data-number="5.3.3" class="anchored" data-anchor-id="texturing"><span class="header-section-number">5.3.3</span> Texturing</h3>
-<p>Satellite image texture quantifies spectral and spatial variations in pixel values of an image <span class="citation" data-cites="farwell2021">(<a href="references.html#ref-farwell2021" role="doc-biblioref">Farwell <em>et al.</em>, 2021</a>)</span>, therefore conveying information about spectral and spatial heterogeneity of image features <span class="citation" data-cites="haralick1973">(<a href="references.html#ref-haralick1973" role="doc-biblioref">Haralick, Shanmugam and Dinstein, 1973</a>)</span>. The specific statistical method we apply here is the <a href="https://zia207.github.io/geospatial-r-github.io/texture-analysis.html">gray-level co-occurrence matrix (GLCM)</a> which is a tabulation of how often different combinations of pixel brightness values (gray levels) occur in an image <span class="citation" data-cites="hall-beyer2017">(<a href="references.html#ref-hall-beyer2017" role="doc-biblioref">Hall-Beyer, 2017</a>)</span>. It characterises the texture of an image by calculating how often pairs of pixels with specific values and in a specified spatial relationship occur in an image, thus creating a GLCM, and then statistical measures are extracted from this matrix. Texture measures then give us concepts like “contrast”, “dissimilarity” and “entropy”.</p>
+<p>Satellite image texture quantifies spectral and spatial variations in pixel values of an image <span class="citation" data-cites="farwell2021">(<a href="references.html#ref-farwell2021" role="doc-biblioref">Farwell et al. 2021</a>)</span>, therefore conveying information about spectral and spatial heterogeneity of image features <span class="citation" data-cites="haralick1973">(<a href="references.html#ref-haralick1973" role="doc-biblioref">Haralick, Shanmugam, and Dinstein 1973</a>)</span>. The specific statistical method we apply here is the <a href="https://zia207.github.io/geospatial-r-github.io/texture-analysis.html">gray-level co-occurrence matrix (GLCM)</a> which is a tabulation of how often different combinations of pixel brightness values (gray levels) occur in an image <span class="citation" data-cites="hall-beyer2017">(<a href="references.html#ref-hall-beyer2017" role="doc-biblioref">Hall-Beyer 2017</a>)</span>. It characterises the texture of an image by calculating how often pairs of pixels with specific values and in a specified spatial relationship occur in an image, thus creating a GLCM, and then statistical measures are extracted from this matrix. Texture measures then give us concepts like “contrast”, “dissimilarity” and “entropy”.</p>
 <p>We compute GLCM texture for our area of interest and obtain the following output:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -371,7 +377,7 @@ div.csl-indent {
 </section>
 <section id="applications-of-key-concepts" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="applications-of-key-concepts"><span class="header-section-number">5.4</span> Applications of key concepts</h2>
-<p>GLCM and PCA can be used together in remote sensing research. In forestry mapping, such as mapping bamboo forests, textural features such as homogeneity, contrast, entropy and variance of GLCM can be used as classification features<span class="citation" data-cites="qi2022">(<a href="references.html#ref-qi2022" role="doc-biblioref">Qi <em>et al.</em>, 2022</a>)</span>. In this study, textural features were derived from the first component image from a PCA. In a object-oriented LULC classification study <span class="citation" data-cites="tassi2020">(<a href="references.html#ref-tassi2020" role="doc-biblioref">Tassi and Vizzari, 2020</a>)</span>, they used GLCM to first calculate textural indices from satellite imagery, and then doing a PCA of the most relevant GLCM metrics to synthesize the textural information. Based on what we observe from current literature, GLCM is usually used to extract textural information from the raster datasets, and PCA done to reduce the number of bands and extract key components, making further steps such as classification easier<span class="citation" data-cites="shafizadeh-moghadam2021">(<a href="references.html#ref-shafizadeh-moghadam2021" role="doc-biblioref">Shafizadeh-Moghadam <em>et al.</em>, 2021</a>)</span>.</p>
+<p>GLCM and PCA can be used together in remote sensing research. In forestry mapping, such as mapping bamboo forests, textural features such as homogeneity, contrast, entropy and variance of GLCM can be used as classification features<span class="citation" data-cites="qi2022">(<a href="references.html#ref-qi2022" role="doc-biblioref">Qi et al. 2022</a>)</span>. In this study, textural features were derived from the first component image from a PCA. In a object-oriented LULC classification study <span class="citation" data-cites="tassi2020">(<a href="references.html#ref-tassi2020" role="doc-biblioref">Tassi and Vizzari 2020</a>)</span>, they used GLCM to first calculate textural indices from satellite imagery, and then doing a PCA of the most relevant GLCM metrics to synthesize the textural information. Based on what we observe from current literature, GLCM is usually used to extract textural information from the raster datasets, and PCA done to reduce the number of bands and extract key components, making further steps such as classification easier<span class="citation" data-cites="shafizadeh-moghadam2021">(<a href="references.html#ref-shafizadeh-moghadam2021" role="doc-biblioref">Shafizadeh-Moghadam et al. 2021</a>)</span>.</p>
 </section>
 <section id="reflections" class="level2" data-number="5.5">
 <h2 data-number="5.5" class="anchored" data-anchor-id="reflections"><span class="header-section-number">5.5</span> Reflections</h2>
@@ -379,24 +385,24 @@ div.csl-indent {
 <p>The practical on texturing was useful in helping me understand how raster data works and how it can be used practically for landcover classification. This knowledge seems to be useful for what we’ll be covering in future weeks.</p>
 
 
-<div id="refs" class="references csl-bib-body" role="doc-bibliography" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
 <div id="ref-farwell2021" class="csl-entry" role="doc-biblioentry">
-Farwell, L. S. <em>et al.</em> (2021) <span>“Satellite image texture captures vegetation heterogeneity and explains patterns of bird richness,”</span> <em>Remote Sensing of Environment</em>, 253, p. 112175. doi: <a href="https://doi.org/10.1016/j.rse.2020.112175">10.1016/j.rse.2020.112175</a>.
+Farwell, Laura S., David Gudex-Cross, Ilianna E. Anise, Michael J. Bosch, Ashley M. Olah, Volker C. Radeloff, Elena Razenkova, et al. 2021. <span>“Satellite Image Texture Captures Vegetation Heterogeneity and Explains Patterns of Bird Richness.”</span> <em>Remote Sensing of Environment</em> 253 (February): 112175. <a href="https://doi.org/10.1016/j.rse.2020.112175">https://doi.org/10.1016/j.rse.2020.112175</a>.
 </div>
 <div id="ref-hall-beyer2017" class="csl-entry" role="doc-biblioentry">
-Hall-Beyer, M. (2017) <span>“GLCM Texture: A Tutorial v. 3.0 March 2017.”</span>
+Hall-Beyer, Mryka. 2017. <span>“GLCM Texture: A Tutorial v. 3.0 March 2017.”</span>
 </div>
 <div id="ref-haralick1973" class="csl-entry" role="doc-biblioentry">
-Haralick, R. M., Shanmugam, K. and Dinstein, I. (1973) <span>“Textural features for image classification,”</span> <em>IEEE Transactions on Systems, Man, and Cybernetics</em>, SMC-3(6), pp. 610–621. doi: <a href="https://doi.org/10.1109/TSMC.1973.4309314">10.1109/TSMC.1973.4309314</a>.
+Haralick, Robert M., K. Shanmugam, and Its’Hak Dinstein. 1973. <span>“Textural Features for Image Classification.”</span> <em>IEEE Transactions on Systems, Man, and Cybernetics</em> SMC-3 (6): 610–21. <a href="https://doi.org/10.1109/TSMC.1973.4309314">https://doi.org/10.1109/TSMC.1973.4309314</a>.
 </div>
 <div id="ref-qi2022" class="csl-entry" role="doc-biblioentry">
-Qi, S. <em>et al.</em> (2022) <span>“Bamboo Forest Mapping in China Using the Dense Landsat 8 Image Archive and Google Earth Engine,”</span> <em>Remote Sensing</em>, 14(3), p. 762. doi: <a href="https://doi.org/10.3390/rs14030762">10.3390/rs14030762</a>.
+Qi, Shuhua, Bin Song, Chong Liu, Peng Gong, Jin Luo, Meinan Zhang, and Tianwei Xiong. 2022. <span>“Bamboo Forest Mapping in China Using the Dense Landsat 8 Image Archive and Google Earth Engine.”</span> <em>Remote Sensing</em> 14 (3): 762. <a href="https://doi.org/10.3390/rs14030762">https://doi.org/10.3390/rs14030762</a>.
 </div>
 <div id="ref-shafizadeh-moghadam2021" class="csl-entry" role="doc-biblioentry">
-Shafizadeh-Moghadam, H. <em>et al.</em> (2021) <span>“Google earth engine for large-scale land use and land cover mapping: An object-based classification approach using spectral, textural and topographical factors,”</span> <em>GIScience &amp; Remote Sensing</em>, 58(6), pp. 914–928. doi: <a href="https://doi.org/10.1080/15481603.2021.1947623">10.1080/15481603.2021.1947623</a>.
+Shafizadeh-Moghadam, Hossein, Morteza Khazaei, Seyed Kazem Alavipanah, and Qihao Weng. 2021. <span>“Google Earth Engine for Large-Scale Land Use and Land Cover Mapping: An Object-Based Classification Approach Using Spectral, Textural and Topographical Factors.”</span> <em>GIScience &amp; Remote Sensing</em> 58 (6): 914–28. <a href="https://doi.org/10.1080/15481603.2021.1947623">https://doi.org/10.1080/15481603.2021.1947623</a>.
 </div>
 <div id="ref-tassi2020" class="csl-entry" role="doc-biblioentry">
-Tassi, A. and Vizzari, M. (2020) <span>“Object-Oriented LULC Classification in Google Earth Engine Combining SNIC, GLCM, and Machine Learning Algorithms,”</span> <em>Remote Sensing</em>, 12(22), p. 3776. doi: <a href="https://doi.org/10.3390/rs12223776">10.3390/rs12223776</a>.
+Tassi, Andrea, and Marco Vizzari. 2020. <span>“Object-Oriented LULC Classification in Google Earth Engine Combining SNIC, GLCM, and Machine Learning Algorithms.”</span> <em>Remote Sensing</em> 12 (22): 3776. <a href="https://doi.org/10.3390/rs12223776">https://doi.org/10.3390/rs12223776</a>.
 </div>
 </div>
 </section>
