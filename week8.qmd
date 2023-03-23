@@ -11,7 +11,7 @@ editor: visual
 
 ## Summary of Key Concepts
 
-We first look at the causes of the Urban Heat Island Effect, its impacts, and then look at how it relates to global and local policies.
+This learning diary entry will first look at the causes of the Urban Heat Island Effect and its impacts. Global and local policies related to UHI will be mentioned/ linked here for future reference or for readers to pursue at their own time.
 
 ### Causes of Urban Heat Island Effect
 
@@ -69,7 +69,7 @@ Source: [@skepticalscience].
 
     -   Released a Beat the Heat Handbook
 
-### **Policy Resources**
+### Policy Resources
 
 #### [Beat the Heat Handbook Case Studies](https://www.unep.org/ndc/resources/report/beating-heat-sustainable-cooling-handbook-cities#:~:text=Beating%20the%20Heat%3A%20A%20Sustainable%20Cooling%20Handbook%20for%20Cities%20was,Innovation%20and%20Clean%20Cooling%20Collaborative.)
 
@@ -83,14 +83,15 @@ Source: [@skepticalscience].
 
 #### Metropolitan UHI Reduction Strategies
 
-**London Plan**
+-   **London Plan**
 
-**Singapore Master Plan**
+-   **Singapore Master Plan**
 
--   Just a comment on the [Open Space Provision](https://www.ura.gov.sg/Corporate/Guidelines/Development-Control/Residential/Terrace/Open-Space-Provision) by the Urban Redevelopment Authority requiring an open space plot at a rate of 4.05 sqm of open space for every 56sqm of gross floor area:
-    -   The provision applies to landed housing development clusters, which in practice take up very little space in Singapore owing to how uncommon they are.
+    -   Just a comment on the [Open Space Provision](https://www.ura.gov.sg/Corporate/Guidelines/Development-Control/Residential/Terrace/Open-Space-Provision) by the Urban Redevelopment Authority requiring an open space plot at a rate of 4.05 sqm of open space for every 56sqm of gross floor area:
 
-    -   A more representative guideline would be how new Housing Development Board (HDB) developments must have a surrounding area of greenery that is [4.5 times the built-up area](https://www.hdb.gov.sg/cs/infoweb/about-us/news-and-publications/publications/dwellings/Building-with-Care). HDB policies are more representative of Singapore's policies as 80% of Singaporeans live in HDB's public housing developments and occupy much more space than landed housing development clusters in Singapore.
+        -   The provision applies to landed housing development clusters, which in practice take up very little space in Singapore owing to how uncommon they are.
+
+        -   A more representative guideline would be how new Housing Development Board (HDB) developments must have a surrounding area of greenery that is [4.5 times the built-up area](https://www.hdb.gov.sg/cs/infoweb/about-us/news-and-publications/publications/dwellings/Building-with-Care). HDB policies are more representative of Singapore's policies as 80% of Singaporeans live in HDB's public housing developments and occupy much more space than landed housing development clusters in Singapore.
 
 ## Summary of Practical Content
 
@@ -170,7 +171,7 @@ The ability to use remotely sensed data for to map temperatures along spatio-tem
 
 Lee and Brown's work [-@lee2022] are also interesting as they combine temperature data with vector data on heat-related incidents, as well as socio-economic variables from census data. They found that the negative effects of thermal environments on human health were higher in areas with a high percentage of impervious surface, population over 65 years, non-white people, no high-school diploma or unemployment. These results can then be used for implementing targeted local intervention efforts at vulnerable areas and groups.
 
-![Heat vulnerability map and spatial distribution of heat-related EMS incidents for census block groups. Source: [@lee2022]. ](img/w8_HVI2.png)
+![Heat vulnerability map and spatial distribution of heat-related EMS incidents for census block groups. Source: [@lee2022].](img/w8_HVI2.png)
 
 In view of climate change and how heatwaves during summer seasons can be more intense now and in the future, more cities should embark on similar studies of vulnerability, combining temperature data from Landsat 8 images with socio-economic data to assess the vulnerability of local areas and communities to heat-related illnesses or deaths. This allows local government to provide targeted resources for those who need it most.
 
