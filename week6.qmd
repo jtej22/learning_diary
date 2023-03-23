@@ -9,9 +9,9 @@ editor: visual
 
 -   Use vector and EO Data
 
--   Landuse Landcover Classification Methods
+-   Understand Landuse Landcover Classification Methods
 
--   Train-test splits
+-   Understand Train-test splits
 
 ## Summary of Key Concepts
 

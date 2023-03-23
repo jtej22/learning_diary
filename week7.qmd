@@ -8,9 +8,9 @@ editor: visual
 
 ## Learning Objectives
 
--   Advanced Classification Methods (sub-pixel and super pixel)
+-   Understand Advanced Classification Methods (sub-pixel and super pixel)
 
--   Assessing accuracy (and accounting for spatial dependence)
+-   Learn how to assess accuracy (and account for spatial dependence)
 
 ## Summary of Key Concepts
 
@@ -148,7 +148,7 @@ For this week's practical, we looked at using sub-pixels and super-pixels for cl
 
 For this practical, I used Ahmedabad, India, which is also the city me and my group used for our group presentation.
 
-::: {#w6_figs_1 layout-nrow="3"}
+::: {#w6_figs_1 layout-nrow="3" layout-ncol="1"}
 ![True Colour for Ahmedabad](img/w7_raw.png){#w7_raw}
 
 ![Sub-pixel approach](img/w7_reclassified.png){#w7_reclassified}
