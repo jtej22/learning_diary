@@ -101,6 +101,6 @@ GLCM and PCA can be used together in remote sensing research. In forestry mappin
 
 ## Reflections
 
-This week's content has familiarised myself with GEE, and hopefully with further use of it, I will become better at understanding the breadth of functions it has in remote sensing analysis. I will also become more aware of limitations of GEE, such as how it might not be the best for doing in-depth geographic analysis with raster data as it has limited analytical functions compared to R for example. We saw how to do classic remote sensing processing steps such as mosaicking and clipping in GEE.
+This week's content has familiarised myself with GEE, and hopefully with further use of it, I will become better at understanding the breadth of functions it has in remote sensing analysis. I will also become more aware of limitations of GEE, such as how it might not be the best for doing in-depth geographic analysis with raster data as it has limited analytical functions compared to R for example. We saw how to do classic remote sensing processing steps such as mosaicking and clipping in GEE. Perhaps an extension of this module for myself would be to read up on how in-depth raster analysis can be performed in R. The spatial data science [website](https://rspatial.org/spatial/8-rastermanip.html#) seems to have some useful resources.
 
 The practical on texturing was useful in helping me understand how raster data works and how it can be used practically for landcover classification. This knowledge seems to be useful for what we'll be covering in future weeks.

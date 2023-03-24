@@ -170,6 +170,6 @@ As remote sensing researchers, we should remain up to date with the latest class
 
 ## Reflections
 
-This week's content was quite technical, covering both advanced classifier methods and indicators for accuracy assessment (although I've learnt the concept of confusion matrix in accuracy assessment before in a module using machine learning). Nonetheless, it was exciting to try out landcover classification on GEE in the practical. While there was much room for improvement, I am excited to experiment with different methods in the future and understand how to optimally classify landcover.
+This week's content was quite technical, covering both advanced classifier methods and indicators for accuracy assessment (although I've learnt the concept of confusion matrix in accuracy assessment before in a module using machine learning). Nonetheless, it was exciting to try out landcover classification on GEE in the practical. While there was much room for improvement, I am excited to experiment with different methods in the future and understand how to optimally classify landcover. I would also need to reflect on my classification process, so that I can do it accurately as I think there's much room for improvement in my inputs during the practical.
 
 However, one slight concern I have is how technical remote sensing jargon can get in academic articles, but I think the only way is to slowly read more and be exposed to different methodologies.

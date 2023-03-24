@@ -125,7 +125,7 @@ This week's practical focuses on extracting temperature data from satellite data
 
 ### Temperature Outputs of Singapore
 
-Firstly, we looked at the timeseries data of Singapore's temperature, from February to September 2022. ![Singapore's temperatures from Feb-Sept '22](img/sg_temp_time.png)
+Firstly, we looked at the timeseries data of Singapore's temperature, from February to September 2022. ![Singapore\'s temperatures from Feb-Sept \'22](img/sg_temp_time.png)
 
 The low temperature in May is surprising as it rarely gets that cold in Singapore, but might have been due to [inter-monsoon conditions and intense rainfall](http://www.weather.gov.sg/fwo-more-warm-days-and-less-wet-weather-expected-for-rest-of-may-2022/) then.
 
